@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Document</title>
+</head>
+
+<!-- Sukurti semantišką elementą turiniui viršuje su navigacija, tačiau ne nav. Jo vaikas - flex konteineris, kuris turi penkis vaikus. Tarp jų - vienodi tarpai. 
+Žemiau jo - flex konteineris su vienu dviejais vaikais. Tarp jų - kiek įmanoma daugiau atstumo. (PAŽENGUSIEMS: abu vaikai yra nuorodos ir nukeliauja į kitą jūsų sukurtą HTML failą).
+Semantiškam elementui pritaikyti stilių drop-shadow https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow
+Užvedus pelę ant lyginio elemento pirmam konteinery - jis pabraukiamas. Antram konteinery ant nelygių - jie paryškinami (PAŽENGUSIEMS: ir tampa didžiosiomis raidėmis, kurių pirmoji raidė - mažoji.)-->
+
+
+<body>
+
+    <header>
+        <div class="flex">
+            <div class="apskritimas">Meniu 1</div>
+            <div class="apskritimas">Meniu 2</div>
+            <div class="apskritimas">Meniu 3</div>
+            <div class="apskritimas">Meniu 4</div>
+            <div class="apskritimas">Meniu 5</div>
+        </div>
+    </header>
+
+    <section>
+        <div class="flex-cont">
+            <div class="staciakampis"><a href="flex.html" title="kitas">meniu 1</a></div>
+            <div class="staciakampis"><a href="flex.html" title="kitas">meniu 2</a></div>
+    </section>
+
+</body>
+
+</html>
