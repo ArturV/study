@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formos</title>
+    <style>
+        form {
+            width: 500px;
+            display: grid;
+        }
+
+        form>fieldset {
+            margin: 20px;
+        }
+
+        .withoutBorder {
+            border: 0px;
+            margin-left: 40%;
+        }
+
+        .withoutBorder2 {
+            border: 0px;
+            margin-left: 30%;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+        }
+
+        .Name,
+        .email,
+        .password {
+            display: inline-block;
+            float: right;
+        }
+
+        .cardNo,
+        .expiration {
+            display: inline-block;
+            float: right;
+        }
+
+        select {
+            display: inline-block;
+            float: right;
+            width: 60%;
+        }
+
+
+        .left {
+            display: block;
+        }
+
+        .leftBlock {
+            margin-left: 50%;
+        }
+
+        button {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            filter: brightness(60%);
+        }
+
+        input:invalid {
+            border-color: red;
+        }
+
+        input:valid {
+            border-color: green;
+        }
+
+        input[type=text]:focus,
+        input[type=email]:focus,
+        input[type=password]:focus {
+            border: 3px solid yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Payment form</h1>
+    <p>Required fields are allowed *</p>
+    <h2>Contact information</h2>
+    <form class="PaymentForm" name="PaymentForm" method="POST" id="PaymentForm" enctype="multipart/form-data">
+
+
+        <fieldset class="leftBlock">
+
+            <legend>Title</legend>
+            <p>
+                <input type="radio" name="radio-button" value="Mister" id="radio-1">
+                <label for="radio-1">Mister</label>
+            </p>
+            <p>
+                <input type="radio" name="radio-button" value="Missis" id="radio-2">
+                <label for="radio-2">Missis</label>
+            </p>
+
+        </fieldset>
+
+        <fieldset class="withoutBorder">
+            <p>
+                <label for="Name">Name</label>
+                <input class="Name" type="text" name="Name" id="Name" minlength="4" maxlength="20" required>
+            </p>
+            <p>
+                <label for="email">E mail</label>
+                <input class="email" type="email" name="email" id="email" required>
+            </p>
+            <label for="password">Password</label>
+            <input class="password" type="password" required>
+        </fieldset>
+
+        <h2>Payment information</h2>
+        <fieldset class="withoutBorder2">
+            <p>
+                <label for="cards">Card type:</label>​
+                <select name="cards" id="cards">​
+                    <option value="Visa">Visa</option>​
+                    <option value="Mastercard">Mastercard</option>​
+                    ​
+                </select>
+            </p>
+            <p>
+                <label for="cardNo">Card number</label>
+                <input type="text" placeholder="Card. Number" maxlength="16" id="CardNo" class="CardNo">
+            </p>
+            <label for="expiration">Expiration date</label>
+            <input type="text" placeholder="mm/yy" id="expiration" class="expiration">​
+        </fieldset>
+        <button type="button">Validate payment</button>
+
+
+    </form>
+</body>
+
+</html>

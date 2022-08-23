@@ -1,0 +1,45 @@
+.logo {
+    /*
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;*/
+
+    width: 200px;
+}
+
+header {
+    background-color: black;
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    text-align: left;
+}
+
+nav {
+    background-color: #f7be21;
+    padding: 20px;
+    text-align: right;
+
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px;
+    margin-right: 20px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: block;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: 1px solid black;
+}

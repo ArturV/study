@@ -1,0 +1,24 @@
+.container {
+    padding: 25px;
+    background-color: #cccccc; /* jeigu nesuveiks img*/
+    background-image: url("fonas2.jpg");
+    background-repeat: repeat;
+}
+
+.container h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.container p {
+    text-align: left;
+    color:black;
+}
+
+.container .pirmas {
+    color:red;
+}
+
+.container .antras {
+    color:yellow;
+}

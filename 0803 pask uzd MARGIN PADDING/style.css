@@ -1,0 +1,78 @@
+body {
+    color: #fff;
+    background-color: pink;
+    text-align: center;
+}
+
+p {
+    padding-bottom: 20px;
+}
+
+h2 {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    padding: 15px;
+}
+
+section {
+    border: #fff solid 4px;
+    margin: 25px;
+    width: 600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.picture {
+    padding: 15px;
+}
+
+.picture-text {
+    width: 630px;
+
+}
+
+.picture img {
+    overflow: hidden;
+    width: 600px;
+}
+
+.background-img {
+    background-image: url("https://i.postimg.cc/vHLdKDVv/fonas.jpg");
+    background-color: azure;
+    background-size: cover;
+}
+
+.picture-text-eof {
+    width: 670px;
+
+}
+
+.container {
+    margin: 40px 40px;
+    border: 2px solid black;
+    display: block;
+}
+
+.aa,
+.cc,
+.ee,
+.gg {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    display: inline-block;
+    padding: 50px;
+}
+
+.bb,
+.dd,
+.ff {
+    margin-left: 30px;
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    display: inline-block;
+}

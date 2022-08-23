@@ -1,0 +1,33 @@
+.grid-container {
+    grid-template-columns: auto auto auto auto;
+}
+
+@media (max-width:700px) {
+    .grid-container {
+        grid-template-columns: auto auto;
+    }
+
+}
+
+.grid-item {
+    height: 150px;
+    width: 100px;
+    background-color: pink;
+
+    margin-top: 20px;
+    border: solid 5px red;
+}
+
+.grid-row-container {
+    grid-template-rows: 1fr 1fr;
+    row-gap: 50px;
+    background-color: bisque;
+}
+
+.grid-row-container .grid-item {
+    background-color: green;
+}
+
+.grid {
+    display: grid;
+}

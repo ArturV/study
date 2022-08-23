@@ -1,0 +1,31 @@
+pradzia:
+
+git init
+git commit -m "komentaras"
+git branch -M main
+git remote add origin https://github.com/ArturV/study.git
+git push -u origin main
+
+
+******************
+
+Kaip kelti pokyčius: git add . 
+ 
+git commit -m "zinute"
+
+git push
+
+Pasiimti dabartinę repozitorijos kopiją: git clone (nuoroda)
+
+
+
+git clone http://github.com.volvc/dsgfsfdg
+
+
+**********
+
+Kaip išsiųsti pokyčius:
+
+git add .
+git commit -m "message"
+git push
