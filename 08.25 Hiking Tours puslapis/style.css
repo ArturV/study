@@ -1,3 +1,11 @@
+/*
+576px for mobiliems
+768px for planšetėms
+992px for nešiojamiems kompiuteriams
+1200px for didesniems ekranams
+
+*/
+
 @media (max-width: 576px) {
     body {
         font-family: "Lato", sans-serif;
@@ -23,6 +31,10 @@
     .column {
         flex: 50%;
         box-sizing: border-box;
+    }
+
+    .column:nth-of-type(2) {
+        display: none;
     }
 
     .ico {
@@ -328,33 +340,361 @@
 
 
 
-    #footer {
-        background-color: #000;
-        height: 100%;
-        padding-top: 90px;
-        padding-bottom: 50px;
-        text-align: center;
-
-    }
-
-    #footer nav a {
-        text-decoration: none;
-        padding-left: 10px;
-        color: #fff;
-    }
-
-    #footer p {
-        color: #fff;
-    }
-
-    #footer .footer-ico ul li {
-        color: #645cff;
-        list-style-type: none;
-        display: inline;
-        text-align: center;
-    }
 
 }
+
+@media (min-width: 577px) {
+    body {
+        font-family: "Lato", sans-serif;
+        /*margin: auto;*/
+    }
+
+    h1 {
+        font-size: 39px;
+
+
+    }
+
+    p {
+        font-size: 24px;
+    }
+
+    .row {
+        display: flex;
+        padding-top: 20px;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 100%;
+
+    }
+
+    .column {
+        box-sizing: border-box;
+        align-content: space-between;
+        justify-content: center;
+    }
+
+    .column nav a {
+        text-decoration: none;
+        padding-left: 20px;
+        color: #000;
+        font-weight: bolder;
+    }
+
+    .ico {
+        margin-top: 15px;
+        color: #645cff;
+        font-size: 24px;
+    }
+
+    .ico i {
+        margin-left: 10px;
+    }
+
+    #intro {
+        height: 800px;
+        background: linear-gradient(#c06bf9dd, #9907facc), url(img/honululu.jpg) no-repeat top center;
+        /*background-image: url("img/honululu.jpg");
+        background-color: #cccccc;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        filter:invert();*/
+
+        position: relative;
+
+    }
+
+    #intro .intro-txt {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+
+    #intro .intro-txt h2 {
+        text-transform: Uppercase;
+        letter-spacing: 12px;
+        font-size: 66px;
+    }
+
+    #intro .intro-txt .button {
+        text-transform: capitalize;
+        padding: 12px;
+        font-size: 22px;
+        color: #fff;
+        background-color: #645cff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    #intro .intro-txt .button:hover {
+        background-color: #645caa;
+        color: #fffff1;
+    }
+
+    #about {
+        /*PADARYTI*/
+    }
+
+    h3 {
+        text-align: center;
+        font-size: 36px;
+        text-transform: Uppercase;
+        letter-spacing: 12px;
+    }
+
+    #services {
+        background-color: #f8fbfc;
+        padding: 70px;
+    }
+
+    #services .services-info {
+        display: grid;
+
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        gap: 0px;
+        height: 100%;
+        margin: 100px;
+    }
+
+
+    #services .services-info i {
+        padding: 10px;
+        background-color: #645caa;
+        float: left;
+        font-size: 28px;
+        margin-right: 20px;
+    }
+
+    #services .services-info h4 {
+        font-size: 24px;
+
+    }
+
+    .item1 {
+
+        grid-row-start: 1;
+        grid-column-start: 1;
+
+        grid-row-end: 2;
+        grid-column-end: 2;
+
+    }
+
+    .item2 {
+
+        grid-row-start: 1;
+        grid-column-start: 2;
+
+        grid-row-end: 2;
+        grid-column-end: 3;
+
+    }
+
+    .item3 {
+
+        grid-row-start: 1;
+        grid-column-start: 3;
+
+        grid-row-end: 2;
+        grid-column-end: 4;
+
+    }
+
+    #tours {
+        background-color: #FFF;
+        padding: 170px;
+        text-align: center;
+    }
+
+    #tours p a {
+        font-size: 18px;
+        color: #645cff;
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: capitalize;
+        padding: 40px;
+    }
+
+    #tours .tours-grid {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 50px;
+        column-gap: 20px;
+        /* height: 100%;*/
+        margin-bottom: 30px;
+    }
+
+    #tours .tours-grid h5 {
+        font-size: 19px;
+        color: #000;
+        padding-left: 20px;
+        text-align: left;
+    }
+
+    #tours .tours-grid i {
+        font-size: 15px;
+        color: #645cff;
+        float: left;
+        padding-left: 20px;
+    }
+
+
+    #tours .tours-grid .price {
+        font-size: 15px;
+        color: #000;
+        float: right;
+        font-weight: bold;
+        padding-right: 20px;
+        margin: 0;
+    }
+
+    #tours .tours-grid>div {
+        padding-bottom: 20px;
+        border: 1px solid #a5a5a5;
+        box-shadow: 3px 3px #ddddda;
+    }
+
+    #item-0 {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        grid-row-end: 2;
+        grid-column-end: 2;
+    }
+
+    #item-1 {
+
+        grid-row-start: 1;
+        grid-column-start: 2;
+
+        grid-row-end: 2;
+        grid-column-end: 3;
+
+    }
+
+    #item-2 {
+
+        grid-row-start: 1;
+        grid-column-start: 3;
+
+        grid-row-end: 2;
+        grid-column-end: 4;
+
+    }
+
+    #item-3 {
+
+        grid-row-start: 2;
+        grid-column-start: 1;
+
+        grid-row-end: 3;
+        grid-column-end: 2;
+
+    }
+
+
+    #tours .tours-grid .img-container {
+        position: relative;
+    }
+
+    #tours .tours-grid img {
+        width: 100%;
+        min-height: 334px;
+    }
+
+
+    #tours .tours-grid .date {
+        position: absolute;
+        top: 12px;
+        background-color: #645cff;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    #gallery {
+        background-color: #f8fbfc;
+        padding-top: 40px;
+        height: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        float: center;
+    }
+
+    #gallery .center {
+
+        display: flex;
+        justify-content: center;
+    }
+
+    #gallery img {
+
+        width: 300px;
+        min-height: 200px;
+    }
+
+    #newsletter {
+        background-color: #645cff;
+        text-transform: capitalize;
+        color: #fff;
+        height: 300px;
+    }
+
+    #newsletter .newsletter-grid {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        height: 100%;
+    }
+
+    .newsletter-grid .column-1 {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        grid-row-end: 2;
+        grid-column-end: 2;
+        text-align: center;
+    }
+
+    .newsletter-grid .column-2 {
+        grid-row-start: 1;
+        grid-column-start: 2;
+        grid-row-end: 2;
+        grid-column-end: 3;
+        text-align: center;
+
+    }
+
+    #newsletter input {
+        display: inline;
+        margin-top: 120px;
+        width: 300px;
+        height: 28px;
+        text-transform: uppercase;
+    }
+
+    #newsletter input[type=submit] {
+        height: 34px;
+        margin-left: 0px;
+        width: 80px;
+    }
+
+
+    /**/
+
+}
+
+/*GLOBAL*/
 
 h1 span {
     color: #645cff;
@@ -364,4 +704,32 @@ h1 span {
 h3 span {
     color: #645cff;
 
+}
+
+
+#footer {
+    background-color: #000;
+    height: 100%;
+    padding-top: 90px;
+    padding-bottom: 50px;
+    text-align: center;
+
+}
+
+#footer nav a {
+    text-decoration: none;
+    padding-left: 10px;
+    color: #fff;
+}
+
+#footer p {
+    color: #fff;
+}
+
+#footer .footer-ico ul li {
+    color: #645cff;
+    list-style-type: none;
+    display: inline;
+    text-align: center;
+    padding-left: 15px;
 }
