@@ -1,0 +1,343 @@
+@media (max-width: 576px) {
+    body {
+        font-family: "Lato", sans-serif;
+        /*margin: auto;*/
+    }
+
+    h1 {
+        font-size: 19px;
+        margin-left: 20px;
+
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .row {
+        display: flex;
+        padding-top: 20px;
+
+    }
+
+    .column {
+        flex: 50%;
+        box-sizing: border-box;
+    }
+
+    .ico {
+        margin-top: 15px;
+        color: #645cff;
+        text-align: right;
+        margin-right: 13px;
+    }
+
+    #intro {
+        height: 800px;
+        background-color: #645cff;
+    }
+
+    #intro h2 {
+        color: #fff;
+        text-align: center;
+        padding-top: 50%;
+        text-transform: Uppercase;
+        letter-spacing: 8px;
+        line-height: 1.6;
+    }
+
+    #intro p {
+        color: #fff;
+        text-align: center;
+        line-height: 2.6;
+        padding: 10px;
+        font-weight: bolder;
+    }
+
+    .button {
+        /*margin: 0 auto;*/
+
+        text-align: center;
+        color: #fff;
+        font-weight: bolder;
+        text-transform: capitalize;
+        text-align: center;
+        text-decoration: none;
+        border: 1px dotted #000;
+        border-radius: 6px;
+        padding: 10px;
+    }
+
+    .button:hover {
+        background-color: bisque;
+        transition: background-color .5s;
+        text-transform: capitalize;
+        text-align: center;
+        text-decoration: dotted;
+        border: 1px dotted #000;
+        border-radius: 6px;
+        padding: 10px;
+    }
+
+    h3 {
+
+        text-align: center;
+        text-transform: Uppercase;
+        letter-spacing: 8px;
+        line-height: 1.6;
+        margin: 40px;
+    }
+
+    #about img {
+        width: 100%;
+        padding: 0;
+    }
+
+    #about h4 {
+        text-transform: Uppercase;
+    }
+
+    #about p {
+        text-align: justify;
+    }
+
+    #about a {
+        text-decoration: none;
+        text-transform: capitalize;
+
+    }
+
+    #services {
+        margin-top: 70px;
+        padding-top: 30px;
+        background-color: #f8fbfc;
+        text-align: center;
+    }
+
+    #services .services-info {
+        padding: 30px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+
+    }
+
+    #services .services-info .item1 {
+        grid-row-start: 1;
+        grid-column-start: 2;
+
+        grid-row-end: 2;
+        grid-column-end: 3;
+    }
+
+    #services .services-info .item2 {
+        grid-row-start: 1;
+        grid-column-start: 1;
+
+        grid-row-end: 2;
+        grid-column-end: 2;
+    }
+
+    #services .services-info .item3 {
+        grid-row-start: 2;
+        grid-column-start: 1;
+
+        grid-row-end: 3;
+        grid-column-end: 2;
+    }
+
+    #services .services-info h4 {
+        text-transform: Uppercase;
+    }
+
+    #services .services-info i {
+        background-color: #645cff;
+        padding: 20px;
+    }
+
+    #tours {
+        text-align: center;
+    }
+
+    #tours p a {
+        font-size: 18px;
+        color: #645cff;
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: capitalize;
+        padding: 40px;
+    }
+
+    #tours .tours-grid {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        /* height: 100%;*/
+        margin-bottom: 30px;
+    }
+
+    #tours .tours-grid h5 {
+        font-size: 19px;
+        color: #000;
+        padding-left: 20px;
+        text-align: left;
+    }
+
+    #tours .tours-grid i {
+        font-size: 15px;
+        color: #645cff;
+        float: left;
+        padding-left: 20px;
+    }
+
+
+    #tours .tours-grid .price {
+        font-size: 15px;
+        color: #000;
+        float: right;
+        font-weight: bold;
+        padding-right: 20px;
+        margin: 0;
+    }
+
+    #tours .tours-grid>div {
+        padding-bottom: 20px;
+        border: 1px solid #a5a5a5;
+        box-shadow: 3px 3px #ddddda;
+    }
+
+    #item-0 {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        grid-row-end: 2;
+        grid-column-end: 2;
+    }
+
+    #item-1 {
+
+        grid-row-start: 2;
+        grid-column-start: 1;
+
+        grid-row-end: 3;
+        grid-column-end: 2;
+
+    }
+
+    #item-2 {
+
+        grid-row-start: 3;
+        grid-column-start: 1;
+
+        grid-row-end: 4;
+        grid-column-end: 2;
+
+    }
+
+    #item-3 {
+
+        grid-row-start: 4;
+        grid-column-start: 1;
+
+        grid-row-end: 5;
+        grid-column-end: 2;
+
+    }
+
+
+    #tours .tours-grid .img-container {
+        position: relative;
+    }
+
+    #tours .tours-grid img {
+        width: 100%;
+
+    }
+
+
+    #tours .tours-grid .date {
+        position: absolute;
+        top: 12px;
+        background-color: #645cff;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    #gallery {
+        margin-top: 70px;
+        padding-top: 30px;
+        background-color: #f8fbfc;
+        text-align: center;
+    }
+
+    #gallery img {
+        display: block;
+        width: 100%;
+        padding-bottom: 10px;
+        background-color: #645cff;
+    }
+
+    #newsletter {
+        background-color: #645cff;
+        text-transform: capitalize;
+        color: #fff;
+        height: 300px;
+        padding-left: 20px;
+    }
+
+    #newsletter .container {
+        display: flex;
+    }
+
+    #newsletter .column {
+        flex: 50%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #newsletter input {
+        width: 100px;
+        margin-top: 50%;
+    }
+
+    #footer {
+        background-color: #000;
+        height: 100%;
+        padding-top: 90px;
+        padding-bottom: 50px;
+        text-align: center;
+
+    }
+
+    #footer nav a {
+        text-decoration: none;
+        padding-left: 10px;
+        color: #fff;
+    }
+
+    #footer p {
+        color: #fff;
+    }
+
+    #footer .footer-ico ul li {
+        color: #645cff;
+        list-style-type: none;
+        display: inline;
+        text-align: center;
+    }
+
+}
+
+h1 span {
+    color: #645cff;
+
+}
+
+h3 span {
+    color: #645cff;
+
+}
