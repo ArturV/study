@@ -721,6 +721,10 @@
         width: 80px;
     }
 
+    .artsy-border1 {
+        border: 6px solid red;
+
+    }
 
     /**/
 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            margin-left: 20px;
+            font-weight: 600;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <p>
+        User device:
+        <span id="user-device"></span>
+    </p>
+
+
+    <p>
+        User email:
+        <span id="user-email"></span>
+    </p>
+
+    <p>
+        User language:
+        <span id="user-locale"></span>
+    </p>
+
+    <p>
+        Current date:
+        <span id="current-date"></span>
+    </p>
+
+
+    <input id="user-name-input">
+    <button onclick="printName()">Save</button>
+
+
+
+    <script>
+        function printName() {
+            const userNameInput = document.getElementById("user-name-input");
+            console.log(userNameInput.value);
+        }
+    </script>
+    <script src="javascript-intro.js"></script>
+</body>
+
+</html>
