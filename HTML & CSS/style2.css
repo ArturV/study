@@ -1,0 +1,74 @@
+header {
+    max-width: 100%;
+    min-width: 50px;
+    filter: drop-shadow(20px 5px 5px #000);
+}
+
+.flex {
+    display: flex;
+    border: 1px solid #000;
+    justify-content: space-around;
+}
+
+.apskritimas {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: 2px dotted #000;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    vertical-align: middle;
+}
+
+.flex :nth-of-type(even):hover {
+    /*odd - nelyginiai */
+    font-size: large;
+    text-decoration: underline;
+}
+
+.apskritimas:nth-child(2) {
+    background-color: green;
+}
+
+.apskritimas:nth-child(3) {
+    background-color: yellow;
+}
+
+.apskritimas:nth-child(4) {
+    background-color: blue;
+}
+
+.apskritimas:nth-child(5) {
+    background-color: purple;
+}
+
+section {
+    margin-top: 55px;
+}
+
+.flex-cont {
+    display: flex;
+    justify-content: safe;
+}
+
+.flex-cont .staciakampis:nth-of-type(odd):hover {
+    /*odd - nelyginiai */
+    font-size: large;
+    text-decoration: solid;
+    text-transform: capitalize;
+    background-color: yellow;
+}
+
+.staciakampis {
+    width: 100px;
+    height: 50px;
+    border: 1px dotted #000;
+    text-align: center;
+    margin: auto;
+    background-color: antiquewhite;
+}
+
+.staciakampis a {
+    padding-top: 12px;
+}
