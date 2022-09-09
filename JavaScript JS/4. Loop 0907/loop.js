@@ -50,6 +50,23 @@ console.log(random1);
 console.log(random2);
 console.log(random3);
 
+//Su while ciklu pasirašykite, kad Jūsų vardą išvestų į console 3 kartus.
+
+const userName = "ArturasV"
+let n = 0;
+while (n < 3) {
+    console.log(userName);
+    n++;
+}
+
+let combo = "s";
+let times = 5;
+while (times < 5) {
+    combo += "Petras"
+    times++;
+    console.log(combo);
+}
+
 // 0908 paskaita 
 const userAgreements = [true, false, true, false, true, true];
 
