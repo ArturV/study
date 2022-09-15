@@ -1,8 +1,3 @@
-function handleFormSubmit(event) {
-  event.preventDefault(); // sustabdo formos veikla pagal nutylejima
-  alert("Forma sekmingai pateikta");
-}
-
 document.querySelector("form").addEventListener("submit", myFunction);
 
 function myFunction(event) {
