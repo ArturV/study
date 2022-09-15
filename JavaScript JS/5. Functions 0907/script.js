@@ -28,3 +28,12 @@ function getTodaysSales(totalSales, totalSalesYesterday = 50) {
 
 //console.log(getTodaysSales(150, 100)); grazina 50 nes numatytoji reiksme naudojama tik jei neremetame to parametro
 console.log(getTodaysSales(150));
+
+
+// Sukurkite funkciją, į kurią paduosite vardą ir jį pa'alert'ins jį :)
+
+function whatsName(yourName) {
+    alert(yourName);
+}
+
+let yourName = prompt("Enter your name");
