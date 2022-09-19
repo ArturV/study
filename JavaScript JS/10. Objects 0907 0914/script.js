@@ -15,13 +15,6 @@ const user = {
   age: 23,
 };
 
-const racingCar = {
-  manufacturer: "BMW",
-  enginePowerHP: 2000,
-  dateOfManucaturer: 2018,
-  released: true,
-};
-
 const consumerCar = {
   manufacturer: "Audi",
   enginePowerHP: 180,
