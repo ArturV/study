@@ -44,3 +44,14 @@ liTwo.textContent = liNewTwo;
 liOne.textContent = liNewOne;
 //console.log(liOne);
 //console.log(liOne);
+
+//5 kitas sprendinys
+const listElement = document.getElementsByTagName("ol")[0];
+const firstListElement = listElement.children[0];
+const secListElement = listElement.children[1];
+
+listElement.replaceChildren(
+  secListElement,
+  firstListElement,
+  listElement.children[2]
+);

@@ -57,3 +57,11 @@ const resetCount = () => {
   count = 0;
   colorTheCode;
 };
+
+const currentRoute = location.pathname;
+const currentURL = location.href;
+
+console.log(currentRoute);
+console.log(currentURL);
+
+//location.assign("/home");
