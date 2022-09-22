@@ -18,8 +18,18 @@ function myFunction(event) {
 2. Sukurk input į kurį įvesi savo amžių. Padaryk, kad submit paspaudus, viršuj esančiame h1 
 elemente atsirastų "Tavo amžius: [amžius]".
 
-3. Sukurk du input - į vieną įrašysi savo vardą, į kitą - amžių. Jei daugiau nei 18 - išmeta h1 elemente 
+3. Sukurk du input - į vieną įrašysi savo vardą, į kitą - amžių. Jei daugiau nei 18 - išmeta h2 elemente 
 "Vairuoti gali: [vardas]"; jei nėra išmeta: "Dar mokysis vairuotis: [vardas]".
+
+4. Sukurkite kino teatro kainos apskaičiavimo platformą. Joje turi būti vienas input laukelis, kur 
+žmogus įrašo savo amžių, o JS apskaičiuoja kainą ir išmeta ją h1 elemente. Standartinis bilietas – 6eu, 
+iki 16 metų – 50proc nuolaida, 1/3 nuolaida vyresniems nei 60. Variable turi būti aprašyti viršuj, kad 
+būtų lengva keist.
+
+5. Kai kuriose šalyse reikia eiti į kariuomenę, jei tu tarp 18 ir 30, tačiau, jei neturi kriminalinio 
+įrašo. Sukurk programą, kuri su input + radio button pasakytų ar tam žmogui gali reikėti eiti į kariuomenę
+ (h1 elemente). Hint: pasirinkite su querySelector tik pažymėtą radio input (aha, yra toks CSS selektorius),
+  ir perskaitykite jo reikšmę.
 
 */
 
@@ -28,7 +38,8 @@ document.querySelector("form").addEventListener("submit", getName);
 
 function getName(event) {
   event.preventDefault();
-  alert(document.querySelector("input[name=my-name]").value);
+  const inputName = document.querySelector("input[name=my-name]").value;
+  //alert(document.querySelector("input[name=my-name]").value);
 }
 
 //2
@@ -37,8 +48,33 @@ document.querySelector("form").addEventListener("submit", getAge);
 function getAge(event) {
   event.preventDefault();
   const inputAge = document.querySelector("input[name=age]").value;
-  alert(document.querySelector("input[name=age]").value);
+  // alert(document.querySelector("input[name=age]").value);
 
-  document.querySelector("h1").textContent = iputAge;
-  console.log(iputAge);
+  document.querySelector("span").textContent = inputAge;
+  console.log(inputAge);
+
+  //3
+  if (inputAge >= 18) {
+    document.querySelector("h2").innerHTML = "vairuoti gali";
+  } else {
+    document.querySelector("h2").textContent = "vairuoti ne gali";
+  }
 }
+
+//4
+
+document.querySelector("form").addEventListener("submit", getClientAge);
+
+function getClientAge(event) {
+  event.preventDefault();
+  const inputClientAge = document.querySelector("input[name=client-age").value;
+  console.log(inputClientAge);
+}
+
+/*
+const getClientAge = (event) => {
+  event.preventDefault();
+  const inputClientAge = document.querySelector("input[name=client-age]").value;
+  console.log(inputClientAge);
+};*/
+getClientAge();
