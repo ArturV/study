@@ -86,3 +86,39 @@ function getLetterByIndex(index) {
   return alphabet[index];
 }
 getLetterByIndex(2);
+
+//5
+
+function calculate(n1, n2, operator) {
+  switch (operator) {
+    case "sum":
+      return n1 + n2;
+    case "sub":
+      return n1 - n2;
+
+    case "div":
+      return n1 / n2;
+
+    case "multi":
+      return n1 * n2;
+  }
+}
+
+console.log(calculate(10, 5, "multi"));
+
+//6
+
+function getRandomeNumber() {
+  const generatedNumber = Math.floor(Math.random() * 10 + 1);
+  console.log("Random number: ", generatedNumber);
+  return generatedNumber;
+}
+
+//getRandomeNumber();
+
+function squareNum(number) {
+  console.log(Math.pow(number, 2));
+  return Math.pow(number, 2); // keliame laipsniu: Math.pow
+}
+
+squareNum(getRandomeNumber());

@@ -63,13 +63,35 @@ function getAge(event) {
 
 //4
 
-document.querySelector("form").addEventListener("submit", getClientAge);
+const basePrice = 6;
+const discount50 = basePrice / 2;
+const discount33 = basePrice / 3;
+
+//document.querySelector("form").addEventListener("submit", getClientAge);
+document
+  .querySelector("#teatro-forma")
+  .addEventListener("submit", getClientAge);
 
 function getClientAge(event) {
   event.preventDefault();
   const inputClientAge = document.querySelector("input[name=client-age").value;
   console.log(inputClientAge);
+  return inputClientAge;
 }
+
+function getPrice() {
+  getClientAge();
+  if (inputClientAge > 0 && inputClientAge < 16) {
+    console.log(discount50);
+  } else if (inputClientAge > 60) {
+    console.log(discount33);
+  } else {
+    console.log(basePrice);
+    document.querySelector("#price-cost").textContent = basePrice.append("Eu");
+  }
+}
+
+getPrice();
 
 /*
 const getClientAge = (event) => {
@@ -77,4 +99,4 @@ const getClientAge = (event) => {
   const inputClientAge = document.querySelector("input[name=client-age]").value;
   console.log(inputClientAge);
 };*/
-getClientAge();
+//getClientAge();
