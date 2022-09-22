@@ -35,12 +35,54 @@ NameLength("Petras", "Mezenas");
 
 //4
 
-const abc = []; // abc masyvas
-abc[0] = "a";
-abc[1] = "b";
-abc[2] = "c";
-abc[3] = "d";
-abc[4] = "e";
-abc[5] = "f";
-abc[6] = "g";
-abc[7] = "h";
+/*
+const getSymbol = (input) => {
+  const abc = []; // abc masyvas
+  abc[0] = "a";
+  abc[1] = "b";
+  abc[2] = "c";
+  abc[3] = "d";
+  abc[4] = "e";
+  abc[5] = "f";
+  abc[6] = "g";
+  abc[7] = "h";
+
+  input = abc;
+  console.log(input);
+};
+getSymbol(2);
+*/
+
+function getLetterByIndex(index) {
+  const alphabet = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
+  console.log(alphabet[index]);
+  return alphabet[index];
+}
+getLetterByIndex(2);

@@ -78,3 +78,5 @@ const sortCarsByEnginePower = (curCar, nextCar) => {
 };
 
 console.log(cars.sort(sortCarsByEnginePower));
+
+// callback
