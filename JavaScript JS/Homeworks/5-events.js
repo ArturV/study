@@ -1,7 +1,7 @@
 // Padaryk, kad paspaudus ant mygtuko - išoktų alert su tavo vardu! (naudoti inline metoda: onclick="")
 // Perrašyti pirmą pratimą su addEventListener (ir nuo šiol naudoti būtent jį ;) ).
 
-document.addEventListener("click", () => {
+document.querySelector("#but").addEventListener("click", () => {
   //alert("paspaudet ant mygtuko");
 
   //Padaryti, kad paspaudus ant mygtuko, po apačia atsirastų paragrafe tekstas apie jus.
