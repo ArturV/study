@@ -83,3 +83,9 @@ getEmailForm.addEventListener("submit", (event) => {
     output.textContent = "Registracija nesekmniga";
   }
 });
+
+//5
+//Sukurk programą, kurioje bus du inputai - vardas (text) ir skaičius
+// (number) ir tuščias <ul>. Įrašius formoje duomenis, po apačia turi
+// susikurti list itemų tiek, kiek tu parašei skaičių. List itemuose
+// turi būti tavo vardas :)
