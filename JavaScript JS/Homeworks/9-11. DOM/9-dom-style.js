@@ -27,9 +27,12 @@ const buttonJump = document.querySelector("#jump-button");
 
 buttonJump.style.cssText = "position:absolute; top:0; left:0";
 
-buttonJump.addEventListener("click", () => {
-  //buttonJump.style.position = "absolute";
-  //buttonJump.style.objectPosition = "right bottom";
-
+buttonJump.addEventListener("click", (event) => {
+  let originalPosition = true;
   buttonJump.style.cssText = "position:absolute; bottom:0; right:0";
+
+  event.target.style.cssText = originalPosition
+    ? "position:absolute; top:0; left:0"
+    : "position:absolute; bottom:0; right:0";
+  originalPosition = false;
 });
