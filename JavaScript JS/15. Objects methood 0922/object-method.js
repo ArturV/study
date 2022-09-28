@@ -9,7 +9,7 @@ const persons = [
 ]
 */
 console.log(personX.salary);
-console.log(persoXn);
+console.log(personX);
 
 const getPerson = () => {
   const randomNumber = Math.random();
