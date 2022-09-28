@@ -17,19 +17,19 @@ const car = {
 //viskas gerai veikia. Hint: už funkcijos ribų negali atspausdinti objekto, nes const person = {} yra limituotas
 //konkrečiame bloke (šiuo atveju - funkcijoje). Už jos ribų jis neegzistuoja
 
-const getDataFromForm = document.querySelector("#name-surname");
+const userForm = document.querySelector("#name-surname");
 
-getDataFromForm.addEventListener("submit", (event) => {
+userForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const Name = document.querySelector("#name").value;
   const surname = document.querySelector("#surname").value; // = event.target.elements.surname.value - tas pats
-  const age = document.querySelector("#age").value;
+  const age = +document.querySelector("#age").value; // stringa keiciame i skaiciu - pridedame + priekyje
   const isLegalAge = age >= 21; //3
-
+  const legalAge = 21;
   let adult = false;
 
-  if (age >= isLegalAge) {
+  if (age >= legalAge) {
     adult = true;
   } else {
     adult = false;
@@ -41,7 +41,7 @@ getDataFromForm.addEventListener("submit", (event) => {
     age: age,
     //isLegal: adult, //3
     isLegal: isLegalAge, //3
-    isAdul: adult,
+    isAdult: adult,
   };
   console.log(person);
 
