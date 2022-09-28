@@ -22,26 +22,26 @@ const getDataFromForm = document.querySelector("#name-surname");
 getDataFromForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const getName = document.querySelector("#name").value;
-  const getSurname = document.querySelector("#surname").value; // = event.target.elements.surname.value - tas pats
-  const getAge = document.querySelector("#age").value;
-  const isLegalAge = getAge >= 21; //3
+  const Name = document.querySelector("#name").value;
+  const surname = document.querySelector("#surname").value; // = event.target.elements.surname.value - tas pats
+  const age = document.querySelector("#age").value;
+  const isLegalAge = age >= 21; //3
 
   let adult = false;
 
-  /*
-  if (getAge >= isLegalAge) {
-    let adult = true;
+  if (age >= isLegalAge) {
+    adult = true;
   } else {
-    let adult = false;
+    adult = false;
   }
-*/
+
   const person = {
-    name: getName,
-    surname: getSurname,
-    age: getAge,
+    name: Name,
+    surname: surname,
+    age: age,
     //isLegal: adult, //3
     isLegal: isLegalAge, //3
+    isAdul: adult,
   };
   console.log(person);
 
