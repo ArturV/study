@@ -72,7 +72,7 @@ const inputName = document.getElementById("name");
 //const namez = document.querySelector("#name").value;
 
 inputName.addEventListener("input", (event) => {
-  const name = document.querySelector("#namez").value;
+  const namez = document.querySelector("#name").value;
   document.body.style.backgroundColor = namez.length < 3 ? "red" : "green";
 });
 
