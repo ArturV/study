@@ -24,6 +24,7 @@ while (i > 0) {
 const names = ["Tomas", "Jonas", "Aiste", "Karolina", "Adomas"];
 
 names.forEach((name, i) => {
+  // forEach istraukia masyvo elementus ( istraukiam masyvo elementus )
   // masyvo elementai istraukiam
   if (i % 2 === 0) {
     // grazina kas antra varda
