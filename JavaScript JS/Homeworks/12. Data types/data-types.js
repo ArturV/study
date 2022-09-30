@@ -47,7 +47,7 @@ const inputFuel = +document.querySelector("#fuel").value;
 const button = document.querySelector("#calculate");
 
 const getPrice = (price, fuel) => {
-  return (price * fuel).toFixed(2);
+  return +(price * fuel).toFixed(2);
 };
 
 button.addEventListener("click", (e) => {
@@ -82,14 +82,17 @@ buttonGo.addEventListener("click", (e) => {
   const inputNumber = +document.querySelector("#repeat-number").value; // turi buti viduje, kad gautu duomenis
   const inputName = document.querySelector("#client-name").value;
 
+  //2 Sukurk input, kur vartotojas įves savo vardą. Įvedus - alert'ink kokio ilgio yra vardas. Tačiau užtikrink, kad priekyje ir gale nebūtų įskaičiuoti tarpeliai.
+  //alert(inputName.trim().length);
+
   console.log(`traukiam: ${inputNumber}`);
 
   let isInteger = Number.isInteger(inputNumber);
-  const createH1 = document.createElement("h1");
 
   if (isInteger === true) {
     let i = 0;
     while (i < inputNumber) {
+      const createH1 = document.createElement("h1");
       createH1.textContent = inputName;
       document.body.append(createH1);
 
