@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+        Sukurk input, kur vartotojas įves savo pilną vardą (t.y. vardą ir pavardę). 
+        Padaryk, kad JS pridėtų du h1 tag'us, viename - vardas, kitame - pavardė.
+    -->
+    <form>
+      <input type="text" id="fullname" placeholder="Full Name" />
+      <button type="submit">Find Name, Surname</button>
+    </form>
+
+    <script>
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Ir toliau naudojame trim(), kad išventume bėdų
+        const fullName = document
+          .getElementById("fullname")
+          .value.trim()
+          .split(" ");
+
+        const name = document.createElement("h1");
+        name.textContent = fullName[0];
+
+        const surname = document.createElement("h1");
+        surname.textContent = fullName[1];
+
+        document.body.append(name, surname);
+      });
+    </script>
+  </body>
+</html>
