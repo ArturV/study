@@ -1,36 +1,31 @@
-const heading = document.body.querySelector("#seo-heading");
-
-const firstName = prompt("Iveskite varda");
-
+const firstName = prompt("Your name");
+const headingElement = document.body.querySelector("#seo-heading");
 const lastNameInput = document.body.querySelector("#last-name-input");
-heading.textContent = firstName;
-
-lastNameInput.addEventListener("input", (event) => {
-  // event.preventDefault();
-
-  const lastName = event.target.value;
-
-  console.log({ lastName });
-  heading.textContent = `${firstName}  ${lastName}`;
-});
-
-const doCalculations = (event, data) => {
-  event.preventDefault();
-  console.log({ event });
-  console.log({ data });
-};
-
 const userDataForm = document.body.querySelector("#user-data-form");
 
+headingElement.textContent = firstName;
+
+lastNameInput.addEventListener("input", (event) => {
+  const lastName = event.target.value.trim();
+  console.log({ lastName });
+
+  headingElement.textContent = `${firstName} ${lastName}`;
+});
+
+lastNameInput.addEventListener("keydown", function () {
+  console.log("Pavarde reiksme pakeista");
+});
+
 userDataForm.addEventListener("submit", (event) => {
-  event.preventDefault(); //tipiskai addEventListener arba onsubmit atributas buna. Abieju nerekomenduotina, nes per daug identiskos logikos bus, pavyzdziui: event.preventDefault()
+  event.preventDefault(); // Tipiskai buna addEventListener arba onsubmit atributas. Abieju nerekomenduotina, nes per daug identiskos logikos bus, pavyzdziui: event.preventDefault()
 
   const favoriteNumberInput = document.body.querySelector("#favorite-number");
 
-  console.log(`User favorite number: ${+favoriteNumberInput.value}`);
+  console.log(`Vartotojo megstamiausias skaicius ${favoriteNumberInput.value}`);
 });
 
 const onSubmit = (event) => {
   event.preventDefault();
-  alert("Submitted successfull");
+
+  alert("Sekmingai issiusta");
 };

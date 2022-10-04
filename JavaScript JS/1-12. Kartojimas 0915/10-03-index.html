@@ -7,17 +7,21 @@
     <title>Document</title>
   </head>
   <body>
-    <h1 id="seo-heading"></h1>
-
     <form id="user-data-form" onsubmit="onSubmit(event)">
       <fieldset>
-        <label for="favorite-number">Your favorite number</label>
-        <input id="favorite-number" name="favorite-number" />
+        <label for="favorite-number">Enter your favorite number</label>
+        <input
+          id="favorite-number"
+          type="number"
+          name="favorite-number"
+          placeholder="0"
+        />
       </fieldset>
-
-      <input type="number" placeholder="0" />
-      <button>OK</button>
+      <input id="last-name-input" />
+      <button>Submit</button>
     </form>
+
+    <h1 id="seo-heading"></h1>
 
     <script src="./10-03-dom.js"></script>
   </body>
