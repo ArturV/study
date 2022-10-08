@@ -78,6 +78,52 @@ function drawC(event) {
 document.getElementById("size").addEventListener("input", drawC);
 //eof
 
-//
 const kubiloKaina = 50.25;
 const pricelocal = document.querySelector("#kubilo-kaina").append(kubiloKaina);
+
+//3 Sukurkite input (be mygtuko), į kurį įrašius vardą ir nulipus nuo input
+//(t.y. blur event), vardas atsiras po apačia, tvarkingame sąraše (su kableliais):
+//Pvz.: Petras, Jonas, Mantas, Antanas.
+
+/*
+const inputNames = document.querySelector("#names");
+
+inputNames.addEventListener(
+  "blur",
+  (event) => {
+    event.target.style.background = "green";
+    event.target.body.append = "done";
+  },
+  true
+);
+*/
+
+function addNameToList(event) {
+  const name = event.target.value.trim();
+  const outputElement = document.getElementById("output");
+  if (name) {
+    outputElement.innerText += `${name}, `;
+  }
+}
+
+document.getElementById("names").addEventListener("blur", addNameToList);
+
+//4 Sukurkite formą su dviem inputais, kurie paims skaičius. Suvedus duomenis -
+// turi alert'int skaičių, kuris arčiausiai 100. Pvz.: fn(101, 81) grąžins 101.
+
+const numberOne = +document.querySelector("#number1").value;
+const numberTwo = +document.querySelector("#number2").value;
+
+const check = (numberFirst, numberSecond) => {
+  const fixNumber = 100;
+  numberFirst = numberOne;
+  numberSecond = numberTwo;
+
+  if (fixNumber - numberFirst < fixNumber - numberSecond) {
+    alert(numberFirst);
+  } else {
+    alert(numberSecond);
+  }
+};
+
+check(numberOne, numberTwo);
