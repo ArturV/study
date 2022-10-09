@@ -1,0 +1,6 @@
+[30-Sep-2013 16:34:30 Europe/Moscow] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/tweblt/public_html/a/php/4/preg.php on line 6
+[30-Sep-2013 16:34:48 Europe/Moscow] PHP Parse error:  syntax error, unexpected '=' in /home/tweblt/public_html/a/php/4/preg.php on line 4
+[30-Sep-2013 16:34:57 Europe/Moscow] PHP Parse error:  syntax error, unexpected '=' in /home/tweblt/public_html/a/php/4/preg.php on line 3
+[30-Sep-2013 16:34:58 Europe/Moscow] PHP Parse error:  syntax error, unexpected '=' in /home/tweblt/public_html/a/php/4/preg.php on line 3
+[30-Sep-2013 16:34:59 Europe/Moscow] PHP Parse error:  syntax error, unexpected '=' in /home/tweblt/public_html/a/php/4/preg.php on line 3
+[30-Sep-2013 16:35:37 Europe/Moscow] PHP Fatal error:  Call to undefined function substring() in /home/tweblt/public_html/a/php/4/preg.php on line 4

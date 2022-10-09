@@ -1,0 +1,31 @@
+
+<html> 
+<head> 
+<title>beganti eilute</title> 
+</head> 
+<script language="JavaScript"> 
+var line="Nebus elektros  "; 
+var speed=150; 
+var i=0; 
+function m_line() { 
+        if(i++<line.length) { 
+                document.cit.forum.value=line.substring(0,i); 
+        } 
+else{ 
+        document.cit.forum.value=" "; 
+        i=0; 
+        } 
+setTimeout('m_line()',speed); 
+} 
+</script> 
+
+<center> 
+<form name=cit> 
+<input type=text size=32 name=forum> 
+</form> 
+</center> 
+<script language="JavaScript"> 
+m_line(); 
+</script> 
+</body> 
+</html>
