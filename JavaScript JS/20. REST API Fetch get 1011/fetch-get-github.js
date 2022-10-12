@@ -1,4 +1,4 @@
-const doFetch = async () => {
+const getFirstXUsers = async () => {
   const getOnlyXUsers = (amount) => {
     return users.slice(0, amount);
     // galima ant originalaus masyvo nustatyti length
@@ -15,7 +15,7 @@ const doFetch = async () => {
   const users = await getUsers();
 
   console.log(getOnlyXUsers(3));
-  const firstThreeUsers = getOnlyXUsers(3);
+  //const firstThreeUsers = getOnlyXUsers(3);
 };
 
-doFetch();
+getFirstXUsers();
