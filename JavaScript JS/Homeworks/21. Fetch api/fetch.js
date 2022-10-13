@@ -7,6 +7,7 @@ const getData = async () => {
     const response = await fetch("https://randomuser.me/api/");
     const users = await response.json();
 
+    console.log(users);
     return users;
   };
 
@@ -14,19 +15,20 @@ const getData = async () => {
 
   //console.log(users);
 
-  const renderUser = () => {
+  const renderUser = async () => {
     const users = getUsers();
     let html = "";
 
     users.forEach((user) => {
-      let htmlInsertion = `<img src="${user.picture}" alt="alt"/> <p>Email: ${user.email}</p>`;
+      let htmlInsertion = `<img src="${user.picture.large}" alt="alt"/> <p>Email: ${user.email}</p>`;
       html += htmlInsertion;
     });
 
     let container = document.querySelector(".container");
     container.innerHTML = html;
   };
-  renderUser();
 };
 
 getData();
+
+//renderUser();
