@@ -8,6 +8,17 @@ Duomenis pasiimsime iš: https://magnetic-melon-yam.glitch.me
 -Suvedus duomenis, lentelėje turi prasifiltruoti pagal vardą arba pavardę (fullname 
     contains search string). Capitalizacija turėtų būti nesvarbi.
 */
+const getRobots = async () => {
+  try {
+    const response = await fetch("https://magnetic-melon-yam.glitch.me");
+
+    const robots = await response.json();
+
+    renderTable(robots);
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 const createTable = () => {
   const newTable = document.createElement("table");
@@ -66,16 +77,4 @@ const renderTable = (robots) => {
   });
 };
 
-const getRobots = async () => {
-  try {
-    const response = await fetch("https://magnetic-melon-yam.glitch.me");
-
-    const robots = await response.json();
-
-    renderTable(robots);
-    console.log(robots);
-  } catch (error) {
-    console.error(error);
-  }
-};
 await getRobots();
