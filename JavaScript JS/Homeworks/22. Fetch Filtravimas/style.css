@@ -1,5 +1,9 @@
 table,
 tr,
-th {
+th,
+td {
   border: 2px solid black;
+}
+#vip {
+  margin: 20px;
 }

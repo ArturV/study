@@ -11,10 +11,9 @@ Duomenis pasiimsime iš: https://magnetic-melon-yam.glitch.me
 const getRobots = async () => {
   try {
     const response = await fetch("https://magnetic-melon-yam.glitch.me");
-
     const robots = await response.json();
 
-    renderTable(robots);
+    return robots;
   } catch (error) {
     console.error(error);
   }
@@ -26,21 +25,18 @@ const createTable = () => {
   const tableHeadForID = document.createElement("th");
   const tableHeadForImage = document.createElement("th");
   const tableHeadForFirstName = document.createElement("th");
+  tableHeadForFirstName.id = "FirstName";
+
   const tableHeadForLastName = document.createElement("th");
   const tableHeadForCity = document.createElement("th");
   const tableHeadForFavColor = document.createElement("th");
 
-  tableHeadForID.innerHTML = "ID";
-
-  tableHeadForImage.innerHTML = "Image";
-
-  tableHeadForFirstName.innerHTML = "First name";
-
-  tableHeadForLastName.innerHTML = "Last name";
-
-  tableHeadForCity.innerHTML = "City";
-
-  tableHeadForFavColor.innerHTML = "Favorite color";
+  tableHeadForID.innerText = "ID";
+  tableHeadForImage.innerText = "Image";
+  tableHeadForFirstName.innerText = "First name";
+  tableHeadForLastName.innerText = "Last name";
+  tableHeadForCity.innerText = "City";
+  tableHeadForFavColor.innerText = "Favorite color";
 
   tableRow.append(
     tableHeadForID,
@@ -56,8 +52,6 @@ const createTable = () => {
   document.body.append(newTable);
 };
 
-createTable();
-
 const renderTable = (robots) => {
   const mainTable = document.querySelector("table");
   const tableBody = document.createElement("tbody");
@@ -66,15 +60,57 @@ const renderTable = (robots) => {
     const tableRow = document.createElement("tr");
 
     const id = document.createElement("td");
-
     id.textContent = element.id;
 
+    const img = document.createElement("img");
+    img.src = element.image;
+    img.setAttribute("alt", "UserPicture");
+    const image = document.createElement("td");
+    image.append(img);
+
+    const [name, surname] = element.name.split(" ");
+
+    const firstName = document.createElement("td");
+    firstName.textContent = name;
+
+    const secondName = document.createElement("td");
+    secondName.textContent = surname;
+
+    const city = document.createElement("td");
+    city.textContent = element.city;
+
+    const favColor = document.createElement("td");
+    favColor.textContent = element.fav_color;
+
     mainTable.append(tableBody);
-
     tableBody.append(tableRow);
-
-    tableRow.append(id);
+    tableRow.append(id, image, firstName, secondName, city, favColor);
+    //tableRow.append(image);
   });
 };
 
-await getRobots();
+const findVip = (robots) => {
+  const checkboxForFindVip = document.createElement("input");
+  checkboxForFindVip.setAttribute("type", "checkbox");
+  const addCheckbox = document.querySelector("#vip");
+  addCheckbox.append("Search vip: ", checkboxForFindVip);
+
+  checkboxForFindVip.addEventListener("change", (event) => {
+    event.preventDefault;
+    /*
+    renderTable(
+      event.target.checked ? robots.filter((element) => element.vip) : element
+    );*/
+
+    if (checkboxForFindVip) {
+      const availableVip = robots.filter((element) => element.vip);
+      renderTable(availableVip);
+      console.log(availableVip);
+    }
+  });
+};
+
+const post = await getRobots();
+createTable();
+renderTable(post);
+findVip(post);
