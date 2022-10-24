@@ -7,7 +7,7 @@ const getUsers = async () => {
     const response = await fetch("https://randomuser.me/api");
     const users = await response.json();
 
-    console.log(users);
+    console.log({ users });
     document.getElementById("container").innerHTML = JSON.stringify(users);
     return users;
   } catch (error) {
@@ -18,6 +18,7 @@ const getUsers = async () => {
 const renderUser = (users) => {
   const email = document.createElement("p");
   const image = document.createElement("img");
+  console.log(users);
 
   users.forEach((element) => {
     email.textContent = element.email;

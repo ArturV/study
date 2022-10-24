@@ -12,6 +12,7 @@ Iš jau naudoto https://jsonplaceholder.typicode.com/ fiktyvaus API back-end atv
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <form id="getPostNumberForm">
@@ -28,6 +29,22 @@ Iš jau naudoto https://jsonplaceholder.typicode.com/ fiktyvaus API back-end atv
       <button type="submit">OK</button>
     </form>
 
+    <div id="postContainer">
+      <div>
+        <div>
+          <span class="postHeading">Title: </span>
+          <span id="postTitle"></span>
+        </div>
+
+        <div>
+          <span class="postHeading">Body: </span>
+          <span id="postBody"></span>
+        </div>
+      </div>
+      <input id="newBodyInput" placeholder="..." aria-label="new-body-input" />
+    </div>
+
+    <button id="updatePostButton">Update</button>
     <script type="module" src="./main.js"></script>
   </body>
 </html>

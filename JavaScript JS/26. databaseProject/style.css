@@ -1,0 +1,14 @@
+#postContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  visibility: hidden;
+}
+
+.postHeading {
+  font-weight: bold;
+}
+
+#updatePostButton {
+  visibility: hidden;
+}
