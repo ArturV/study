@@ -1,7 +1,12 @@
 import { getPost } from "./modules/getPost.js";
 import { showPost } from "./modules/showPost.js";
+import { updatePost } from "./modules/updatePost.js";
 
 const form = document.querySelector("#getPostNumberForm");
+
+const updatePostButton = document.querySelector("#updatePostButton");
+
+updatePostButton.addEventListener("click", updatePost);
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
