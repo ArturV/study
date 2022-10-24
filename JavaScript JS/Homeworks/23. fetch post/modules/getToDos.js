@@ -9,16 +9,17 @@ Sukurkite navigaciją, kad galėtumėte tarp puslapių vaikščioti ir patikrink
 
 
 */
-const getToDos = async () => {
+const getTodos = async () => {
   try {
-    // const response = await fetch("https://olive-bead-glazer.glitch.me");
     const response = await fetch("https://jsonplaceholder.typicode.com/todos");
-    const toDos = await response.json();
+    const todos = await response.json();
 
-    return toDos;
+    const fakeBackendTodos = JSON.parse(localStorage.getItem("todos")) || []; // imk, kas yra localstorage. priesingu atveju - tuscias masyvas
+
+    return [...fakeBackendTodos, ...todos];
   } catch (error) {
     console.error(error);
   }
 };
 
-export { getToDos };
+export { getTodos };

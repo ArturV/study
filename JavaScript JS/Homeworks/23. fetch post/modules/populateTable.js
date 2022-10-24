@@ -1,29 +1,29 @@
-import { getToDos } from "./getToDos.js";
+import { getTodos } from "./getTodos.js";
 
-const tableElement = document.querySelector("table#toDos");
+const tableBody = document.querySelector("#todo-list>tbody");
 
-const addRow = (newItem) => {
-  const titleColumn = document.createElement("td");
-  const completedColumn = document.createElement("td");
+const addRow = (todo) => {
+  const { title, completed } = todo; // identiska, jei const title = todo.title;
+
   const rowElement = document.createElement("tr");
-  const completedCheckbox = document.createElement("input");
+  const todoTitleElement = document.createElement("td");
+  const todoCompletedElement = document.createElement("td");
+  const isCompletedCheckbox = document.createElement("input");
 
-  titleColumn.textContent = newItem.title;
-  //completedColumn.textContent = newItem.completed;
+  isCompletedCheckbox.type = "checkbox";
+  isCompletedCheckbox.checked = completed;
 
-  completedCheckbox.type = "checkbox";
-  completedCheckbox.checked = newItem.completed;
+  todoTitleElement.textContent = title;
 
-  completedColumn.append(completedCheckbox);
+  todoCompletedElement.append(isCompletedCheckbox); // į <td> pridėk checkboxą (<input>)
 
-  rowElement.append(titleColumn, completedColumn);
-  tableElement.append(rowElement);
+  rowElement.append(todoTitleElement, todoCompletedElement);
+
+  tableBody.append(rowElement);
 };
 
-const populateTable = async () => {
-  const toDos = await getToDos();
+export const populateTable = async () => {
+  const todos = await getTodos();
 
-  toDos.forEach((toDoItem) => addRow(toDoItem));
+  todos.forEach((todoItem) => addRow(todoItem));
 };
-
-export { populateTable };
