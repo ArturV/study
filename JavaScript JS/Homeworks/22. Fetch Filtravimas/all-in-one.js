@@ -46,15 +46,16 @@ const createTable = () => {
     tableHeadForCity,
     tableHeadForFavColor
   );
+  const tableBody = document.createElement("tbody");
 
-  newTable.append(tableRow);
+  newTable.append(tableRow, tableBody);
 
   document.body.append(newTable);
 };
 
 const renderTable = (robots) => {
-  const mainTable = document.querySelector("table");
-  const tableBody = document.createElement("tbody");
+  const tableBody = document.querySelector("tbody");
+  tableBody.textContent = "";
 
   robots.forEach((element) => {
     const tableRow = document.createElement("tr");
@@ -82,10 +83,8 @@ const renderTable = (robots) => {
     const favColor = document.createElement("td");
     favColor.textContent = element.fav_color;
 
-    mainTable.append(tableBody);
     tableBody.append(tableRow);
     tableRow.append(id, image, firstName, secondName, city, favColor);
-    //tableRow.append(image);
   });
 };
 
@@ -96,17 +95,18 @@ const findVip = (robots) => {
   addCheckbox.append("Search vip: ", checkboxForFindVip);
 
   checkboxForFindVip.addEventListener("change", (event) => {
-    event.preventDefault;
+    const availableVip = robots.filter((element) => element.vip);
+    renderTable(event.target.checked ? availableVip : robots);
     /*
     renderTable(
       event.target.checked ? robots.filter((element) => element.vip) : element
     );*/
-
+    /*
     if (checkboxForFindVip) {
       const availableVip = robots.filter((element) => element.vip);
       renderTable(availableVip);
       console.log(availableVip);
-    }
+    } */
   });
 };
 
