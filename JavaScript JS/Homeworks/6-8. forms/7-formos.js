@@ -89,3 +89,49 @@ getEmailForm.addEventListener("submit", (event) => {
 // (number) ir tuščias <ul>. Įrašius formoje duomenis, po apačia turi
 // susikurti list itemų tiek, kiek tu parašei skaičių. List itemuose
 // turi būti tavo vardas :)
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+  const name = document.getElementById("name").value;
+  const numberOfElements = Number(
+    document.getElementById("numberOfElements").value
+  );
+
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+  for (let i = 0; i < numberOfElements; i++) {
+    const listItem = document.createElement("li");
+    listItem.innerText = name;
+    list.append(listItem);
+  }
+}
+
+document.querySelector("form").addEventListener("submit", handleFormSubmit);
+
+//6.
+//Sukurkite formą, kurioje vienas input - skaičius, įvesti stačiakampio dydį. Po forma - tegul būna tusčias div elementas.
+// Jame reikia atvaizduoi trikampį pagal įvestą input. Šis pratimas - klasika programavimo ciklų srityje, tiek atsakymų,
+//tiek teorijų, tiek sąmokslo teorijų internete - daugiau nei reikia; pasibaigus ar pastrigus - būtinai pasinagrinėkite
+//(gal vienas iš paaiškinimų jums atvers duris į ciklų pasaulio aiškumą).
+//Pvz:
+//Įvesta: 2
+//Rezultatas:
+//*
+//**
+
+function drawTriangle(event) {
+  event.preventDefault();
+  let triangleSize = Number(document.getElementById("triangleSize").value);
+  const outputElement = document.getElementById("output2");
+
+  let output = "";
+  for (i = 0; i < triangleSize; i++) {
+    for (j = 0; j <= i; j++) {
+      output += "*";
+    }
+    output += "<br>";
+    outputElement.innerHTML = output;
+  }
+}
+
+document.querySelector("form").addEventListener("submit", drawTriangle);

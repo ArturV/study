@@ -106,3 +106,55 @@ isBiggerThanHundred(10, 50);
 //array išrykiuotą pagal amžių ir jei amžius sutampa – vardus a>z tvarka.
 //Pvz.: fn([{name: „Alfredas“, age: 25}, {name: „Jonas“, age: 25}, {name: „Kasparas“, age: 20}]) ->
 //[{name: „Kasparas“, age: 20}, {name: „Alfredas“, age: 25}, {name: „Jonas“, age: 25}]
+
+const fn2 = (array) =>
+  array
+    .sort((a, b) => (a.name > b.name ? 1 : -1))
+    .sort((a, b) => a.age - b.age);
+
+//11 Parašykite funkciją, į kurią padavus datą, pasakys ar išeiginė ar ne (visos išeiginės turi būti saugomos array.)
+//Pvz.: fn(new Date(2020, 12, 25)) -> true
+
+function isItHoliday(date) {
+  const holidays = ["2020-01-01", "2020-05-25"];
+  return holidays.some(
+    (holiday) => new Date(holiday).getDate() === date.getDate()
+  );
+}
+
+console.log(isItHoliday(new Date("2020-05-25")));
+
+//12 Sukurkite funkciją, kuri kaip parametrą gaus array su skaičiais. Funkcija turės grąžinti mažiausią trūkstamą skaičių iš array.
+// Pvz. Paduodu: [1, 2, 4, 5]; Grąžina: 3
+
+const missingNumber = (array) =>
+  array.find((x, i) => x + 1 !== array[i + 1]) + 1;
+
+// OBJEKTAI
+
+//1. Pasakykite skaičių kiek vyrų yra tarp šių duomenų (t.y. console'log skaičių).
+console.log(data.filter((person) => person.gender === "Male").length);
+
+//2. Sukurkite masyvą, kuriuose būtų id visų žmonių, kurie turi automobilius naujesnius nei 2000 metai.
+console.log(
+  data.filter((person) => person.car_year > 2000).map((person) => person.id)
+);
+
+//3. Sukurkite masyvą visų žmonių, kurių marškinių dydžiai XS arba S; ir surūšiuokite šį masyvą pagal vardus, A-Z tvarka (alfabetiškai).
+console.log(
+  data
+    .filter((person) => person.shirt_size === "XS" || person.shirt_size === "S")
+    .sort((a, b) => (a.first_name > b.first_name ? 1 : -1))
+);
+
+//4. Pakoreguokite trečią pratimą, kad masyve matytųsi tik id, vardas bei marškinių dydis.
+console.log(
+  data
+    .filter((person) => person.shirt_size === "XS" || person.shirt_size === "S")
+    .map((person) => ({
+      id: person.id,
+      first_name: person.first_name,
+      shirt_size: person.shirt_size,
+    }))
+    .sort((a, b) => (a.first_name > b.first_name ? 1 : -1))
+);

@@ -127,3 +127,45 @@ const check = (numberFirst, numberSecond) => {
 };
 
 check(numberOne, numberTwo);
+
+//5 Sukurkite programą, kurioje pakrovus puslapį susigeneruoja skaičius tarp 1 ir 5.
+// Vartotojas turi formą su vienu input - gali spėti skaičių. Atspėjus - išmeta alert(atspejai), kitaip alert(neatspejai).
+
+let randomNumber = Math.floor(Math.random() * 5) + 1;
+console.log(randomNumber);
+
+function guessNumber(event) {
+  event.preventDefault();
+  const guessedNumber = Number(document.getElementById("guess").value);
+  if (randomNumber === guessedNumber) {
+    alert("Atspėjai");
+  } else {
+    alert("Neatspėjai");
+  }
+}
+
+document.querySelector("form").addEventListener("submit", guessNumber);
+
+//6 Pakoreguokite penktą pratimą, kad skaičiuotų iš kelinto karto atspėjai ir tai parašytų alert'e.
+
+/*
+
+let counter = 0;
+let randomNumber = Math.floor(Math.random() * 5) + 1;
+console.log(randomNumber);
+
+function guessNumber(event) {
+  event.preventDefault();
+  counter++;
+  const guessedNumber = Number(document.getElementById('guess').value);
+  if (randomNumber === guessedNumber) {
+    alert(`Atspėjai iš ${counter} karto`);
+  }
+  else {
+    alert("Neatspėjai");
+  }
+}
+
+document.querySelector('form').addEventListener('submit', guessNumber);
+
+*/
