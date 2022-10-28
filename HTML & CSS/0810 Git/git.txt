@@ -11,7 +11,7 @@ git push -u origin main
 
 Kaip kelti pokyčius: git add . 
  
-git commit -m "zinute"
+git commit -am "zinute"
 
 git push
 
