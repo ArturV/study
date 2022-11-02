@@ -36,5 +36,5 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, () => {
   // nurodom port'a ties kurio bus laukiama uzklausu
-  console.log("server up");
+  console.log(`server up ${randomN}`);
 });
