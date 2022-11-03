@@ -2,7 +2,7 @@
 Node Package Manager (npm) naudojamas įkelti bei valdyti packages (kodo gabaliukus - bibliotekos,frameworkai)
  bei atlikti kitus veiksmus susijusius su esamu projektu
 
- Pradėti projektą - npm init
+ Pradėti projektą - npm init -y
 Įrašyti packages - npm i
 
 //
