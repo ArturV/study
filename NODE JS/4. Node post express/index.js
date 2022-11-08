@@ -1,5 +1,7 @@
 const express = require("express");
 
+// git rm -rf --cached .  - isvalyti kesa githube
+
 require("dotenv").config(); // npm i dotenv pries tai irasome i terminala
 //const { addListener } = require("nodemon");
 
