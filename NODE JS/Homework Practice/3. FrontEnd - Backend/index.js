@@ -8,6 +8,9 @@ const express = require("express");
 Testuokite su PostMan.
 */
 
+//diegimas CORS: npm install cors; ir importuodami.
+// (mes ją pasivadinome 'app'): app.use(cors()).
+
 const app = express();
 const cors = require("cors");
 const PORT = 5000;
