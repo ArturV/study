@@ -1,14 +1,24 @@
 const ENDPOINT = "http://localhost:5000/";
-const userNameInput = document.querySelector("#name-submit-button");
+const submitButton = document.querySelector("#submit-button");
 const userParagraph = document.createElement("p");
 
-userNameInput.addEventListener("click", async () => {
-  const userId = document.querySelector("#name-input");
+const addNewUser = async () => {
+  const userNameInput = document.querySelector("#name-input").value;
+  const userSurNameInput = document.querySelector("#sur-name-input").value;
 
-  const response = await fetch(ENDPOINT);
-  const names = await response.json();
+  const addUser = JSON.stringify({
+    name: userNameInput,
+    surname: userSurNameInput,
+  });
 
-  userParagraph.textContent = JSON.stringify(names);
+  const request = await fetch(ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+    body: addUser,
+  });
+  const response = await request.json();
+};
 
-  document.body.append(userParagraph);
-});
+submitButton.addEventListener("click", addNewUser);
