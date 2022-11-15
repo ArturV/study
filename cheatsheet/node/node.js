@@ -39,7 +39,7 @@ app.use(express.json());
 
 const PORT = 5001;
 
-let students = [{ firstName: "Andrius", lastName: "Zažeckas", studentId: 1 }];
+let students = [{ firstName: "Name", lastName: "Surname", studentId: 1 }];
 
 app.get("/", (_, res) => {
   res.send(students).end();
