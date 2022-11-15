@@ -26,6 +26,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send(users);
+  res.end();
 });
 
 app.post("/", (req, res) => {
@@ -35,6 +36,7 @@ app.post("/", (req, res) => {
   users.push({ name, surname });
 
   res.send(users);
+  res.end();
 });
 
 app.listen(PORT, () => {
