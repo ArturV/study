@@ -390,17 +390,17 @@ app.delete("/delete", (req, res) => {
 });
 
 app.get("/cars/:brand", (req, res) => {
-  const brands = req.params;
+  const brand = req.params.brand;
 
   //console.log(req.body.brands);
-  console.log(brands);
+  console.log(brand);
   //console.log(req.params);
   //console.log(cars);
   //console.log(cars.bmw);
 
-  //const searchObject = cars.find((car) => car.bmw === brands);
+  const searchObject = cars[brand];
 
-  //console.log(searchObject);
+  console.log(searchObject);
 
   //console.log(req.body.cars.brand);
   res.send(cars).end();
@@ -423,26 +423,10 @@ app.get("/data/car/:model", (req, res) => {
   // const searchCar = data.find((userCar) => userCar.car === model);
   // const searchCar = data.find((userCar) => userCar.car.toLowerCase() === model);
   const searchCar = data.filter(
-    (userCar) => userCar.car.toLowerCase() === model
+    (userCar) => userCar.car.toLowerCase() === model.toLowerCase()
   );
 
-  const searchCar2 = data.filter((userCar) => userCar.car.toLowerCase());
-
-  //console.log(`423line: ${JSON.stringify(searchCar)}`);
-  //console.log(`434line: ${JSON.stringify(searchCar2)}`);
-
-  if (searchCar) {
-    console.log(
-      `${JSON.stringify(searchCar.first_name)} ${
-        searchCar.last_name
-      } have ${JSON.stringify(searchCar)}`
-    );
-    res.send(searchCar).end();
-  } else {
-    res.send("No one ").end();
-  }
-
-  //res.send(searchCar).end();
+  res.send(searchCar).end();
 });
 
 //Sukurkite dinaminį GET route, kuris priims vartotojo id ir pagal jį grąžins atitinkamą vartotojo objektą.
