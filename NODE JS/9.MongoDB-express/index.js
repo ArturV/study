@@ -1,5 +1,5 @@
 const express = require("express");
-const { MongoClient } = require("mongodb");
+const { MongoClient, ObjectId } = require("mongodb");
 require("dotenv").config(); // npm i dotenv pries tai irasome i terminala
 
 const app = express();
@@ -18,6 +18,46 @@ app.get("/users", async (_, res) => {
       .collection(dbCollection)
       .find()
       .toArray();
+    await connection.close();
+    return res.send(data);
+  } catch (err) {
+    res.status(500).send({ err });
+  }
+});
+
+app.get("/filtered-users", async (req, res) => {
+  const { name, surname } = req.query; // query skirta filtravimui per url: ?name=  pvz: ?name=Jonas&surname=Naujas
+  /*
+body: kurti, redaguoti
+query: filtruoti
+params: pasiekti tam tikrą įrašą
+*/
+  try {
+    const connection = await client.connect();
+    const data = await connection
+      .db(DB)
+      .collection(dbCollection)
+      .find({ name, surname })
+      .toArray();
+
+    console.log(name);
+    await connection.close();
+    return res.send(data);
+  } catch (err) {
+    res.status(500).send({ err });
+  }
+});
+
+app.get("/user/:id", async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    const connection = await client.connect();
+    const data = await connection
+      .db(DB)
+      .collection(dbCollection)
+      .findOne({ _id: ObjectId(id) });
+
     await connection.close();
     return res.send(data);
   } catch (err) {
