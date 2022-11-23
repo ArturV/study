@@ -48,6 +48,30 @@ params: pasiekti tam tikrą įrašą
   }
 });
 
+app.patch("/user/:id", async (req, res) => {
+  const { id } = req.params;
+  const { age, firstName, lastName } = req.body;
+
+  // todo: test whether age, firstName, lastName are provided properly
+  try {
+    const con = await client.connect();
+    const db = con.db(DB);
+
+    const user = await db
+      .collection("users")
+      .findOneAndUpdate(
+        { _id: ObjectId(id) },
+        { $set: { age, firstName, lastName } }
+      );
+
+    await con.close();
+
+    res.send(user).end();
+  } catch (error) {
+    return res.send({ error }).end();
+  }
+});
+
 app.get("/user/:id", async (req, res) => {
   const id = req.params.id;
 
