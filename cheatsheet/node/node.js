@@ -5,7 +5,7 @@ bei atlikti kitus veiksmus susijusius su esamu projektu
 su kiekvienu nauju projektu:
 
 npm init -y
-npm i express cors dotenv
+npm i express cors dotenv mongodb
 npm i mongodb // kai reikia duombazes
 npm i -D nodemon
 npm start
