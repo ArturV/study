@@ -41,7 +41,7 @@ app.post("/people", async (req, res) => {
     const dbRes = await con
       .db(DB)
       .collection(DBCOLLECTION)
-      .insertOne({ firstName, lastName, age });
+      .insertOne({ firstName, lastName, age }); //.insertMany({ firstName, lastName, age });
     await con.close();
     return res.send(dbRes);
   } catch (err) {
@@ -50,8 +50,6 @@ app.post("/people", async (req, res) => {
 });
 
 app.get("/people", async (req, res) => {
-  const id = req.params.id;
-
   try {
     const connection = await client.connect();
     const data = await connection
