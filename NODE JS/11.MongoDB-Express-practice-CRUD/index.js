@@ -77,6 +77,7 @@ app.post("/order", async (req, res) => {
         orderProducts: ["Xiomi v7", "Samsung TV85"],
       });*/
       .insertOne(newEntity); // - paduodame is Postman body
+    //.insertMany - paduoda keleta
     await con.close();
     return res.send(dbRes);
   } catch (err) {
