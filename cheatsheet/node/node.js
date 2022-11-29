@@ -6,10 +6,14 @@ su kiekvienu nauju projektu:
 
 npm init -y
 npm i express cors dotenv
-npm i -D nodemon
 npm i mongodb // kai reikia duombazes
+npm i -D nodemon
 npm start
 
+*/
+
+/*
+const prices = await collection.distinct("price") // - atrenka unikalias reiksmes
 */
 
 /* SERVER */
@@ -221,3 +225,69 @@ app.post("/user", async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`server is running on port: ${PORT}`));
+
+/*
+app.get("/orders", async (req, res) => {
+
+  const { deliveryType } = req.body;
+
+  try {
+
+    const connection = await client.connect();
+    const ordersCount = await connection
+      .db(DB)
+      .collection(DBCOLLECTION)
+      .count({ deliveryType });
+    const orders = await connection
+     .db(DB)
+      .collection(DBCOLLECTION)
+      .find()
+      .toArray();
+    await connection.close();
+
+    res.send({ ordersCount, orders });
+
+  } catch (err) {
+
+    res.status(500).send({ err }).end();
+
+    throw Error(err);
+
+  }
+
+});
+
+*/
+/*
+app.post("/orders", async (req, res) => {
+  const { postOrders } = req.body;
+
+  if (!Array.isArray(postOrders)) {
+    return res
+
+      .status(400)
+
+      .send({ message: "postOrders is not an array" })
+
+      .end();
+  }
+
+  try {
+    const connection = await client.connect();
+
+    const newOrders = await connection
+
+      .db(DB)
+
+      .collection(DBCOLLECTION)
+
+      .insertMany(postOrders);
+
+    await connection.close();
+
+    res.send(newOrders).end();
+  } catch (error) {
+    res.status(500).send({ error }).end();
+  }
+});
+*/

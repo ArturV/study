@@ -39,15 +39,23 @@ app.use(express.json());
 app.get("/orders", async (_, res) => {
   try {
     const connection = await client.connect();
+    const { deliveryType } = req.body;
+    const ordersCount = await connection
+      .db(DB)
+      .collection(dbCollection)
+      .count({ deliveryType });
+
     const data = await connection
       .db(DB)
       .collection(dbCollection)
       .find()
       .toArray();
+
     await connection.close();
-    return res.send(data);
+    res.send({ data, ordersCount });
   } catch (err) {
-    res.status(500).send({ err });
+    res.status(500).send({ err }).end();
+    throw Error(err);
   }
 
   res.send(entity).end();
