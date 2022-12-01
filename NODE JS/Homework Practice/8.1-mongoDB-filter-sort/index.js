@@ -66,27 +66,7 @@ app.post("/pets", async (req, res) => {
   }
 });
 
-app.get("/pets/:type", async (req, res) => {
-  const { type } = req.params;
-  console.log(type);
-  try {
-    const connection = await client.connect();
-    const data = await connection
-      .db(DB)
-      .collection(DBCOLLECTION)
-      //.find({ "type": "type" })
-      .find({ type: { $regex: type } })
-      .toArray();
-
-    console.log(data);
-    await connection.close();
-    res.send(data).end();
-  } catch (err) {
-    res.status(500).send({ err }).end();
-  }
-});
-
-app.get("/pets/byoldest", async (req, res) => {
+app.get("/pets/by-oldest", async (req, res) => {
   try {
     const connection = await client.connect();
     const data = await connection
@@ -97,7 +77,26 @@ app.get("/pets/byoldest", async (req, res) => {
       .toArray();
 
     await connection.close();
-    return res.send(data);
+    res.send(data).end();
+  } catch (err) {
+    res.status(500).send({ err }).end();
+  }
+});
+
+app.get("/pets/:type", async (req, res) => {
+  const { type } = req.params;
+
+  try {
+    const connection = await client.connect();
+    const data = await connection
+      .db(DB)
+      .collection(DBCOLLECTION)
+      .find({ type: type })
+      //.find({ type: { $regex: type } })
+      .toArray();
+
+    await connection.close();
+    res.send(data).end();
   } catch (err) {
     res.status(500).send({ err }).end();
   }
