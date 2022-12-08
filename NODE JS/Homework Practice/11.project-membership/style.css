@@ -103,6 +103,11 @@ header .active-menu {
   color: #677ee8;
   padding-left: 17px;
 }
+
+#sort {
+  cursor: pointer;
+}
+
 #user-tab {
   float: left;
   width: 33.33%;

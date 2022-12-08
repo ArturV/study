@@ -34,6 +34,7 @@ app.get("/memberships", async (_, res) => {
       .find()
       .sort({ price: 1 })
       .toArray();
+
     console.log(data);
     await connection.close();
     return res.send(data).end();
@@ -134,10 +135,30 @@ app.post("/users", async (req, res) => {
 app.get("/users", async (_, res) => {
   try {
     const connection = await client.connect();
+
     const data = await connection
       .db(DB)
       .collection(DBCOLLECTION)
       .find()
+      .toArray();
+
+    await connection.close();
+    res.send(data).end();
+  } catch (err) {
+    res.status(500).send({ err }).end();
+    throw Error(err);
+  }
+});
+
+app.get("/users/:id", async (_, res) => {
+  try {
+    const connection = await client.connect();
+
+    const data = await connection
+      .db(DB)
+      .collection(DBCOLLECTION)
+      .find()
+      .sort({ name: -1 })
       .toArray();
 
     await connection.close();

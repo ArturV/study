@@ -34,9 +34,11 @@
             <label for="price">Membership price</label>
             <i class="fa fa-usd" aria-hidden="true"></i>
             <input
+              type="number"
               name="price"
               id="membership-price"
               placeholder="Membership price"
+              step="0.01"
             />
           </div>
 
@@ -55,65 +57,6 @@
       </div>
     </div>
 
-    <script>
-      const ENDPOINT = "http://localhost:5000/memberships";
-      const submitButton = document.querySelector("#new-membership");
-      const userParagraph = document.createElement("p");
-
-      const getMemberships = async () => {
-        try {
-          const response = await fetch(ENDPOINT);
-          const memberships = await response.json();
-
-          return memberships;
-        } catch (err) {
-          throw Error({ err });
-        }
-      };
-
-      //await MembershipNames();
-
-      const addNewMembership = async (e) => {
-        e.preventDefault();
-        const membershipNameInput = document
-          .querySelector("#membership-name")
-          .value.trim();
-        const membershipPriceInput = document
-          .querySelector("#membership-price")
-          .value.trim();
-        const membershipDescriptionInput = document.querySelector(
-          "#membership-description"
-        ).value;
-        //const membershipInput = document.querySelector("#memberships-list");
-        //const membershipInputOption = membershipInput.options[membershipInput.selectedIndex].value
-
-        if (!membershipNameInput || !membershipPriceInput) {
-          alert("write price & name data");
-          return;
-        }
-
-        const addMembership = JSON.stringify({
-          name: membershipNameInput,
-          price: membershipPriceInput,
-          description: membershipDescriptionInput,
-        });
-
-        const request = await fetch(ENDPOINT, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: addMembership,
-        });
-        const response = await request.json();
-
-        if (request.ok) {
-          document.body.querySelector("#add-membership-form").reset();
-          alert("Membership was created");
-        }
-      };
-
-      submitButton.addEventListener("click", addNewMembership);
-    </script>
+    <script type="module" src="./modules/newMembership.js"></script>
   </body>
 </html>
