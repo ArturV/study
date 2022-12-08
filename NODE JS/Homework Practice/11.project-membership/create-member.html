@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Membership</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="membership.html" title="memberships" class="active-menu"
+          >Memberships</a
+        >
+        <a href="users.html" title="users">Users</a>
+      </nav>
+    </header>
+
+    <div class="background-area">
+      <h1>Create Membership</h1>
+      <div class="membership-form">
+        <form id="add-membership-form">
+          <label for="name">Name</label>
+          <input name="name" id="membership-name" placeholder="Name" />
+          <div class="wrapper">
+            <label for="price">Membership price</label>
+            <i class="fa fa-usd" aria-hidden="true"></i>
+            <input
+              name="price"
+              id="membership-price"
+              placeholder="Membership price"
+            />
+          </div>
+
+          <label for="description">Description</label>
+          <textarea
+            name="description"
+            id="membership-description"
+            rows="8"
+          ></textarea>
+
+          <div id="button-area">
+            <button type="reset" id="cancel-button">Cancel</button>
+            <button type="submit" id="new-membership">New Membership</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const ENDPOINT = "http://localhost:5000/memberships";
+      const submitButton = document.querySelector("#new-membership");
+      const userParagraph = document.createElement("p");
+
+      const getMemberships = async () => {
+        try {
+          const response = await fetch(ENDPOINT);
+          const memberships = await response.json();
+
+          return memberships;
+        } catch (err) {
+          throw Error({ err });
+        }
+      };
+
+      //await MembershipNames();
+
+      const addNewMembership = async (e) => {
+        e.preventDefault();
+        const membershipNameInput = document
+          .querySelector("#membership-name")
+          .value.trim();
+        const membershipPriceInput = document
+          .querySelector("#membership-price")
+          .value.trim();
+        const membershipDescriptionInput = document.querySelector(
+          "#membership-description"
+        ).value;
+        //const membershipInput = document.querySelector("#memberships-list");
+        //const membershipInputOption = membershipInput.options[membershipInput.selectedIndex].value
+
+        if (!membershipNameInput || !membershipPriceInput) {
+          alert("write price & name data");
+          return;
+        }
+
+        const addMembership = JSON.stringify({
+          name: membershipNameInput,
+          price: membershipPriceInput,
+          description: membershipDescriptionInput,
+        });
+
+        const request = await fetch(ENDPOINT, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: addMembership,
+        });
+        const response = await request.json();
+
+        if (request.ok) {
+          document.body.querySelector("#add-membership-form").reset();
+          alert("Membership was created");
+        }
+      };
+
+      submitButton.addEventListener("click", addNewMembership);
+    </script>
+  </body>
+</html>

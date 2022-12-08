@@ -21,7 +21,7 @@ const DBCOLLECTION = process.env.DBCOLLECTION;
 
 app.use(express.json());
 
-app.get("/pets", async (req, res) => {
+app.get("/pets", async (_, res) => {
   try {
     const connection = await client.connect();
     const data = await connection

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="membership.html" title="memberships">Memberships</a>
+        <a href="users.html" title="users" class="active-menu">Users</a>
+      </nav>
+    </header>
+    <div class="background-area">
+      <div class="heading">
+        <div class="col-1">
+          <h1>User Managment</h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
+            corrupti temporibus ab error magnam maiores quidem neque soluta sint
+            minus, incidunt minima necessitatibus iste illum tenetur aut
+            architecto laborum tempore
+          </p>
+        </div>
+        <div class="col-2">
+          <a class="add" href="create-user.html">+ New User</a>
+        </div>
+      </div>
+
+      <div class="sorting">
+        Sorting by Name: ASC <i class="fa fa-sort" aria-hidden="true"></i>
+      </div>
+
+      <div class="users"></div>
+
+      <div class="footer">Copyright 2022</div>
+    </div>
+
+    <script>
+      const populateUsers = async () => {
+        const users = await getUsers();
+
+        const containerElement = document.body.querySelector(".users");
+        containerElement.replaceChildren();
+
+        // const divElement = document.createElement("div");
+        //divElement.setAttribute("id", "user-tab");
+
+        users.forEach((user) => {
+          const divElement = document.createElement("div");
+          divElement.setAttribute("id", "user-tab");
+
+          const userName = document.createElement("h3");
+          const userEmail = document.createElement("p");
+          const blueSpan = document.createElement("span");
+          const blueSpanMembership = document.createElement("span");
+          blueSpan.className = "blue";
+          blueSpanMembership.className = "blue";
+          const userMembership = document.createElement("p");
+          const userIP = document.createElement("p");
+
+          userName.textContent = `${user.name} ${user.surname}`;
+          userEmail.textContent = `Email adress: `;
+          blueSpan.textContent = `${user.email}`;
+          userMembership.textContent = `Membership: `;
+          blueSpanMembership.textContent = `${user.service_id}`;
+          userIP.textContent = `ip: ${user.userIp}`;
+
+          userEmail.append(blueSpan);
+          userMembership.append(blueSpanMembership);
+
+          divElement.append(
+            userName,
+            userEmail,
+            userMembership,
+            userMembership,
+            userIP
+          );
+          containerElement.append(divElement);
+        });
+      };
+
+      const getUsers = async () => {
+        try {
+          const response = await fetch("http://localhost:5000/users");
+          const memberships = await response.json();
+
+          return memberships;
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+      populateUsers();
+    </script>
+  </body>
+</html>

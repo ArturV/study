@@ -1,0 +1,345 @@
+header {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+header a {
+  padding-right: 80px;
+  color: #b3b3b8;
+  text-decoration: none;
+}
+
+header a:hover {
+  padding-right: 80px;
+  color: #677ee8;
+  text-decoration: none;
+}
+
+header .active-menu {
+  padding-right: 80px;
+  color: #677ee5;
+  text-decoration: none;
+}
+
+.background-area {
+  background-color: #f0f0f5;
+  padding-top: 50px;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.heading {
+  display: grid;
+
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 0px;
+  height: 100%;
+
+  justify-content: space-evenly;
+  justify-items: center;
+}
+
+#col-1 {
+  grid-row-start: 1;
+  grid-column-start: 1;
+
+  grid-row-end: 2;
+  grid-column-end: 2;
+}
+#col-2 {
+  grid-row-start: 1;
+  grid-column-start: 2;
+
+  grid-row-end: 2;
+  grid-column-end: 3;
+
+  justify-self: right;
+}
+
+#col-2 button {
+  margin-top: 150px;
+  padding-top: 150px;
+}
+
+.add {
+  background-color: #677ee8;
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#memberships {
+  background-color: #f0f0f5;
+  height: 800px;
+}
+
+/*
+#memberships #membership-tab {
+  padding: 400px;
+  border: 2px solid blue;
+  color: red;
+  text-align: center;
+}*/
+
+.blue {
+  color: #677ee8;
+}
+
+.sorting .fa {
+  color: #677ee8;
+  padding-left: 17px;
+}
+#user-tab {
+  float: left;
+  width: 33.33%;
+  margin-top: 20px;
+  background-color: #fff;
+  width: 400px;
+  height: 190px;
+  border: 2px solid #eee;
+  text-align: left;
+  padding-left: 20px;
+  margin: 20px;
+}
+
+#membership-tab {
+  float: left;
+  width: 33.33%;
+  margin-top: 20px;
+  background-color: #fff;
+  width: 400px;
+  height: 190px;
+  border: 2px solid #eee;
+  text-align: left;
+  padding-left: 20px;
+  margin: 20px;
+  text-align: center;
+}
+
+#user-tab h3 {
+  padding-bottom: 20px;
+}
+
+.users:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.memberships:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.sorting {
+  text-align: center;
+  font-weight: bolder;
+  margin: 12px;
+}
+
+.footer {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.required {
+  color: red;
+}
+/*
+.memberships {
+  display: grid;
+
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  gap: 0px;
+  height: 100%;
+}*/
+
+#item-0 {
+  grid-row-start: 1;
+  grid-column-start: 1;
+
+  grid-row-end: 2;
+  grid-column-end: 2;
+}
+#item-1 {
+  grid-row-start: 1;
+  grid-column-start: 2;
+
+  grid-row-end: 2;
+  grid-column-end: 3;
+}
+#item-2 {
+  grid-row-start: 1;
+  grid-column-start: 3;
+
+  grid-row-end: 2;
+  grid-column-end: 4;
+}
+#item-3 {
+  grid-row-start: 2;
+  grid-column-start: 1;
+
+  grid-row-end: 3;
+  grid-column-end: 2;
+}
+#item-4 {
+  grid-row-start: 2;
+  grid-column-start: 2;
+
+  grid-row-end: 3;
+  grid-column-end: 3;
+}
+#item-5 {
+  grid-row-start: 2;
+  grid-column-start: 3;
+
+  grid-row-end: 3;
+  grid-column-end: 4;
+}
+
+.user-form {
+  background-color: #fff;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 50px;
+}
+
+.membership-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #fff;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 25px;
+}
+
+#membership-description {
+  padding: 15px;
+  width: 679px;
+  border-radius: 5px;
+  border: solid #000 2px;
+}
+
+#delete-element {
+  border: 1px solid #f8e5e9;
+  border-radius: 2px;
+  height: 30px;
+  width: 30px;
+  margin-top: 20px;
+  margin-left: 350px;
+  background-color: #f8e5e9;
+}
+
+#delete-element i {
+  color: red;
+  padding-top: 7px;
+  cursor: pointer;
+}
+
+#delete-element i:hover {
+  color: rgb(173, 0, 0);
+  padding-top: 8px;
+}
+
+.column50 {
+  float: left;
+  width: 50%;
+  height: 300px;
+  /* padding: 20px;*/
+}
+
+.user-form :after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+label {
+  float: left;
+  font-weight: bold;
+}
+input {
+  width: 95%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.wrapper {
+  position: relative;
+}
+i.fa-usd {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+}
+
+#membership-price::placeholder {
+  padding-left: 15px;
+}
+#memberships-list {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 28px 0;
+  margin-left: -21%;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+#new-membership,
+#new-user {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: #677ee8;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#cancel-button {
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: #fff;
+  border: none;
+  color: #000;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#button-area {
+  top: 50%;
+  left: 50%;
+  text-align: center;
+}
