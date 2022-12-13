@@ -21,3 +21,5 @@ DELETE FROM products WHERE id = 2;
 Update products set name="iPad 2020" WHERE name="iPad";
 
 SELECT * from products WHERE id NOT null;
+
+
