@@ -1,7 +1,7 @@
 const express = require("express");
 const mysql = require("mysql2/promise");
 const cors = require("cors");
-require("dotenv").config;
+require("dotenv").config();
 
 /*
 Susikuriame NodeJS Express serverį, kuriame instaliuojame MySQL ir sukuriame 4 route'us:
@@ -18,17 +18,13 @@ const SERVER_PORT = 5000;
 
 //const MYSQL_CONFIG = process.env.MYSQL_CONFIG;
 
-const MYSQL_CONFIG = "#";
-
-/* {
+const MYSQL_CONFIG = {
   host: process.env.host,
   user: process.env.user,
   password: process.env.password,
   port: process.env.port,
   database: process.env.database,
-  
-}; */
-console.log(MYSQL_CONFIG);
+};
 
 app.use(express.json());
 app.use(cors());
@@ -62,16 +58,20 @@ app.post("/shirts", async (req, res) => {
   if (brand.length > 30 && model.length > 30) {
     return res.status(400).send("Insert brand & model to 30 symbols").end();
   }
-  /*
-  if (size != "XS" || "S" || "M" || "L" || "XL") {
-    console.log(size);
-    console.log({ size });
+
+  if (
+    size !== "XS" ||
+    size !== "S" ||
+    size !== "M" ||
+    size !== "L" ||
+    size !== "XL"
+  ) {
     return res
       .status(400)
       .send("Size must be one of these: XS, S, M, L, XL")
       .end();
   }
-*/
+
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
     await con.execute(
@@ -112,20 +112,20 @@ app.get("/shirts/:size", async (req, res) => {
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
 
-    if (size) {
-      const result = await con.execute(
-        `SELECT * FROM shirts WHERE SIZE='${size}' ORDER BY price ASC LIMIT 10;`
-      );
+    const query = size
+      ? `SELECT * FROM shirts WHERE SIZE='${size}' ORDER BY price ASC LIMIT 10;`
+      : `SELECT * FROM shirts ORDER BY price ASC LIMIT 10;`;
+    /*
+    if (size) { 
+      query = `SELECT * FROM shirts WHERE SIZE='${size}' ORDER BY price ASC LIMIT 10;`;
+    } else {
+      query = `SELECT * FROM shirts ORDER BY price ASC LIMIT 10;`;
     }
-    //if (!size) {
-    else {
-      const result = await con.execute(
-        `SELECT * FROM shirts ORDER BY price ASC LIMIT 10;`
-      );
-    }
+*/
+    const result = await con.execute(query);
 
     await con.end();
-    //console.log(result);
+
     res.send(result[0]).end();
   } catch (error) {
     res.status(500).send(error).end();
@@ -152,5 +152,7 @@ app.get("*", async (_, res) => {
 });
 
 app.listen(SERVER_PORT, () => {
+  console.log(2 == "2");
+  console.log(2 === "2");
   console.log(`Server running on ${SERVER_PORT}`);
 });
