@@ -108,13 +108,17 @@ app.get("/shirts", async (_, res) => {
 
 app.get("/shirts/:size", async (req, res) => {
   const size = req.params.size.toUpperCase();
+  //const size = req.query.size.toUpperCase();
+  const limit = req.query.limit;
+  //const limit = 2;
 
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
 
-    const query = size
-      ? `SELECT * FROM shirts WHERE SIZE='${size}' ORDER BY price ASC LIMIT 10;`
-      : `SELECT * FROM shirts ORDER BY price ASC LIMIT 10;`;
+    const query =
+      size && limit
+        ? `SELECT * FROM shirts WHERE SIZE='${size}' ORDER BY price ASC LIMIT ${limit};`
+        : `SELECT * FROM shirts ORDER BY price ASC LIMIT ${limit};`;
     /*
     if (size) { 
       query = `SELECT * FROM shirts WHERE SIZE='${size}' ORDER BY price ASC LIMIT 10;`;
@@ -132,6 +136,9 @@ app.get("/shirts/:size", async (req, res) => {
     return console.error(error);
   }
 });
+
+// 4. Pakoreguokime, kad LIMIT skaičius būtų pagal search parametrą,
+// tarp 10 ir 100. Linko pvz.: "/shirts/M?limit=20" (naudojame req.query).
 
 //2.1. GET "/" - išmeta, kad serveris funkcionuoja.
 app.get("/", async (_, res) => {
