@@ -138,8 +138,8 @@ app.get("/", async (_, res) => {
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
 
-    res.send("Server working").end();
     await con.end();
+    res.send("Server working").end();
   } catch (error) {
     res.send({ error }).end();
     console.error(error);
