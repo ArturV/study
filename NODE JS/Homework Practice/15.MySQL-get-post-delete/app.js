@@ -125,20 +125,31 @@ app.delete("/items/:id", async (req, res) => {
 
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
-    const checkID = await con.execute(
-      `SELECT id FROM items WHERE ID =${cleanId} `
-    );
-
-    if (checkID.length === 0) {
+    /* const existingIds = await con.execute(
+      `SELECT id FROM items WHERE id = ${cleanId} `
+    );*/
+    /*const existingIds = (
+      await con.execute(`SELECT id FROM items WHERE id = ${cleanId} `)
+    )[0];
+    console.log(existingIds);
+    if (!existingIds.length) {
       // if (checkID === []) {
       console.log("nera tokio id");
       res.send("No item with this ID").end();
-    } else {
-      console.log("trinam");
-      await con.execute(`DELETE FROM items WHERE id= ${cleanId};`);
-      await con.end();
-      res.send("Item deleted").end();
+    } else { */
+    //console.log("trinam");
+    const result = (
+      await con.execute(`DELETE FROM items WHERE id= ${cleanId};`)
+    )[0];
+    console.log(result);
+    await con.end();
+
+    if (!result.affectedRows) {
+      return res.status(404).send("Item not deleted").end();
     }
+
+    res.status(202).send("Item deleted").end();
+    //}
   } catch (error) {
     res.status(500).send(error).end;
     return console.error(error);

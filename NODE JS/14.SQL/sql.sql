@@ -16,6 +16,21 @@
 -- INSERT into products (id, name, price) VALUES(3, "iPad", 199);
 
 
+https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_join
+SQL Tryit Editor v1.6
+
+-- LENTELIU SUJUNGIMAS
+-- galutiniam rezultate (vienoj lentelej bus sie stulpeliai)
+-- is Orders lenteles:  OrderID, Orders.OrderDate
+-- is Customer: CustomerName, ContactName
+SELECT Orders.OrderID, Customers.CustomerName, Customers.ContactName, Orders.OrderDate
+FROM Orders 
+JOIN Customers -- galima ir INNER JOIN
+ON Orders.CustomerID = Customers.CustomerID;
+
+
+-------------
+
 DELETE FROM products WHERE id = 2;
 
 Update products set name="iPad 2020" WHERE name="iPad";
