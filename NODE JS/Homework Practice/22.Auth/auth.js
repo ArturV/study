@@ -3,11 +3,15 @@ const mysql = require("mysql2/promise");
 require("dotenv").config();
 const Joi = require("joi");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 // Susikurkime naują NodeJS projektą su: Express, CORS, mysql2, eslint, JOI bei bcryptjs.
 
 const router = express.Router();
 
+const { dbConfig, jwtSecret } = require("./config");
+
+/*
 const MYSQL_CONFIG = {
   host: process.env.host,
   user: process.env.user,
@@ -15,7 +19,7 @@ const MYSQL_CONFIG = {
   port: process.env.port,
   database: process.env.database,
 };
-
+*/
 const userSchema = Joi.object({
   email: Joi.string().email().trim().lowercase().required(),
   password: Joi.string().required(),
@@ -74,7 +78,11 @@ router.post("/login", async (req, res) => {
     const isAuthed = bcrypt.compareSync(userData.password, data[0].password);
 
     if (isAuthed) {
-      return res.send("ok");
+      const token = jwt.sign(
+        { id: data[0].id, email: data[0].email },
+        jwtSecret
+      );
+      return res.send(token);
     }
 
     return res.status(400).send({ err: "Incorect email or password" });
