@@ -2,7 +2,7 @@
   "name": "22.auth-ok",
   "type": "module",
   "version": "1.0.0",
-  "description": "",
+  "description": "Pasirašykime du route'us, POST /register ir POST /login. Register įrašys į duomenų bazę, o login - pasiims iš duomenų bazės ir patikrins ar duomenys teisingi. Sukurkime front-end'o du puslapius: register.html ir login.html, kurie atliks POST request'us",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
