@@ -1,9 +1,16 @@
-const express = require("express");
-const mysql = require("mysql2/promise");
-require("dotenv").config();
-const Joi = require("joi");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+import express from "./express";
+import mysql from "./mysql2/promise";
+import Joi from "./joi";
+import bcrypt from "./bcryptjs";
+import jwt from "./jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
+
+//const mysql = require("mysql2/promise");
+//require("dotenv").config();
+//const Joi = require("joi");
+//const bcrypt = require("bcryptjs");
+//const jwt = require("jsonwebtoken");
 
 // Susikurkime naują NodeJS projektą su: Express, CORS, mysql2, eslint, JOI bei bcryptjs.
 
@@ -92,4 +99,4 @@ router.post("/login", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

@@ -1,5 +1,4 @@
-const express = require("express");
-
+import express from "./express";
 const router = express.Router();
 
 const { isLoggedIn } = require("./middleware");
@@ -8,4 +7,4 @@ router.get("/", isLoggedIn, (req, res) => {
   res.send("Route");
 });
 
-module.exports = router;
+export default router;

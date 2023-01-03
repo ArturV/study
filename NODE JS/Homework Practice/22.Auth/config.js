@@ -1,6 +1,8 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+//const dotenv = require("dotenv").config(); identiska
+dotenv.config();
 
-module.exports = {
+export default {
   SERVER_PORT: process.env.SERVER_PORT || 5000,
   jwtSecret: process.env.JWT_SECRET,
 
@@ -11,4 +13,13 @@ module.exports = {
     port: process.env.port,
     database: process.env.database,
   },
+};
+
+export const SERVER_PORT = process.env.SERVER_PORT || 5000;
+export const dbConfig = {
+  host: process.env.host,
+  user: process.env.user,
+  password: process.env.password,
+  port: process.env.port,
+  database: process.env.database,
 };
