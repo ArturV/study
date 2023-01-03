@@ -22,5 +22,21 @@ router.post("/register", async (req, res) => {
 
   try {
     const hashedPassword = bcrypt.hashSync(userData.password);
-  } catch (err) {}
+
+    const con = await mysql.createConnection(MYSQL_CONFIG);
+    const [data] = await con.execute(
+      `INSERT INTO users (email, password) VALUES (${mysql.escape(
+        userData.email
+      )}, "${hashedPassword}")`
+    );
+
+    await con.end();
+
+    return res.send(data);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).send({ err: "Unexpected error, try again" });
+  }
 });
+
+export default router;
