@@ -2,7 +2,8 @@ import express from "express";
 import Joi from "joi"; // duomenu validavimui
 import mysql from "mysql2/promise";
 import bcrypt from "bcryptjs"; // duomenu kodavimui
-import { MYSQL_CONFIG } from "../src/config.js";
+import jwt from "jsonwebtoken"; //
+import { MYSQL_CONFIG, jwtSecret } from "../src/config.js";
 
 //package.json butina prideti:   "type": "module", kai naudojame import
 
@@ -66,7 +67,11 @@ router.post("/login", async (req, res) => {
     const isAuthed = bcrypt.compareSync(userData.password, data[0].password);
 
     if (isAuthed) {
-      return res.send("You are logged in");
+      const token = jwt.sign(
+        { id: data[0].id, email: data[0].email },
+        jwtSecret
+      );
+      return res.send({ msg: "Succesfully loged in", token });
     }
 
     await con.end();
