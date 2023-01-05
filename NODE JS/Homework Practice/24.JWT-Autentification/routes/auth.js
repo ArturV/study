@@ -26,7 +26,6 @@ router.post("/register", async (req, res) => {
     const hashedPassword = bcrypt.hashSync(userData.password);
     const reg_timestamp = new Date().toLocaleString();
     // reg_timestamp DATETIME NOT NULL DEFAULT (current_timestamp());
-
     //ALTER TABLE users MODIFY reg_timestamp DATETIME NOT NULL DEFAULT (current_timestamp());
 
     const con = await mysql.createConnection(MYSQL_CONFIG);
