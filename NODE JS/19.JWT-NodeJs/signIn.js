@@ -7,6 +7,7 @@ const issuedAt = new Date().getTime();
 const expiresIn = 60;
 
 export const signIn = (req, res) => {
+  console.log(req.headers);
   const { userName, password } = req.body;
 
   const users = {
@@ -36,5 +37,6 @@ export const signIn = (req, res) => {
 
   res.cookie("token", token, { maxAge: expiresIn * 1_000 });
 
-  res.send("Sign in successfully").end();
+  //res.send("Sign in successfully").end();
+  res.send({ accessToken: token }).end();
 };
