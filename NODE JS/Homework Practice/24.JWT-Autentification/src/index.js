@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import { PORT } from "./config.js";
 import auth from "../routes/auth.js";
-//import article from "../routes/article.js";
+import article from "../routes/article.js";
 
 const app = express();
 
@@ -10,6 +10,11 @@ app.use(express.json());
 app.use(cors());
 app.use("/auth", auth);
 //app.use("/article", article);
+
+app.post("/auth/register", registerUser);
+app.post("/auth/login", loginUser);
+
+app.get("/articles", getArticles);
 
 app.get("/", (_, res) => {
   res.send("Server running").end();
