@@ -20,9 +20,13 @@ export const createOrder = ({
       id
     );
 
-    return order;
+    if (order) {
+      orders.push(order);
+
+      return { order };
+    }
   } catch (error) {
-    return console.error(error);
+    return { error };
   }
 };
 

@@ -3,17 +3,15 @@ import { createOrder, getOrders } from "../services/order-service.js";
 
 export const ordersController = Router();
 
-let orders = [];
-
-ordersController.get("/", (req, res) => {
-  orders = getOrders();
+ordersController.get("/", (_, res) => {
+  const orders = getOrders();
 
   res.send({ orders }).end();
 });
 
 ordersController.post("/", (req, res) => {
   const { name, orderedAt, completedAt, products, totalPrice } = req.body;
-  const newOrder = createOrder({
+  const { order, error } = createOrder({
     name,
     orderedAt,
     completedAt,
@@ -21,7 +19,9 @@ ordersController.post("/", (req, res) => {
     totalPrice,
   });
 
-  orders.push(newOrder);
+  if (!order || error) {
+    return res.status(400).send({ error }).end();
+  }
 
-  res.send({ orders }).end();
+  res.send({ message: `Order ${name} was created.` }).end();
 });

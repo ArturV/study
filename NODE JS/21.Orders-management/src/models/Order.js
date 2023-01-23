@@ -5,7 +5,7 @@ const orderSchema = Joi.object({
   name: Joi.string().trim().lowercase(),
   orderedAt: Joi.string().required(),
   completedAt: Joi.string(),
-  products: Joi.string().required(),
+  products: Joi.array().required(),
   totalPrice: Joi.string().required(),
 });
 

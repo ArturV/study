@@ -38,3 +38,6 @@ Update products set name="iPad 2020" WHERE name="iPad";
 SELECT * from products WHERE id NOT null;
 
 
+----- join 3 tables example: https://learnsql.com/blog/how-to-join-3-tables-or-more-in-sql/
+
+

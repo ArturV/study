@@ -1,0 +1,140 @@
+.App {
+  text-align: center;
+  padding-left: 150px;
+  padding-right: 150px;
+  background-color: #6d6d6df5;
+}
+
+.App .App-logo {
+  height: 80px;
+  pointer-events: none;
+  text-align: left !important;
+}
+
+.logo {
+  text-align: left;
+  background-color: #fff;
+}
+
+#meniu {
+  width: 1220px;
+  height: 80px;
+  background-color: rgb(1, 51, 34);
+}
+
+ul {
+  padding-top: 25px;
+  text-align: left;
+  font-size: large;
+}
+
+ul li {
+  display: inline;
+  padding-left: 20px;
+  color: #fff;
+}
+
+ul li a {
+  margin-top: 30px;
+  text-align: left !important;
+  color: #fff;
+  text-decoration: none;
+}
+
+#header-img {
+  width: auto;
+  height: 400px;
+  background-color: green;
+}
+
+#header-img h1 {
+  padding-top: 190px;
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+#column-3 {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 0px;
+  text-align: left;
+}
+
+#about {
+  grid-area: 1 / 1 / 2 / 2;
+  background-color: #fff;
+  padding: 20px;
+}
+#company {
+  grid-area: 1 / 2 / 2 / 3;
+  background-color: #fff;
+  padding: 20px;
+}
+#services {
+  grid-area: 1 / 3 / 2 / 4;
+  background-color: #fff;
+  padding: 20px;
+}
+
+#column-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: #fff;
+  margin-top: 50px;
+  text-align: left;
+  height: 450px;
+  padding-bottom: 100px;
+}
+
+#content {
+  grid-area: 1 / 1 / 2 / 2;
+  padding-left: 30px;
+}
+#navigation {
+  grid-area: 1 / 2 / 2 / 3;
+  padding-left: 100px;
+}
+
+#navigation-meniu ul li {
+  display: block;
+  width: 400px;
+  float: left;
+  padding-bottom: 30px;
+  background-color: #a7a5a5;
+  padding-top: 20px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
