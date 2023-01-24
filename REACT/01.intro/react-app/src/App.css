@@ -138,3 +138,7 @@ ul li a {
     transform: rotate(360deg);
   }
 }
+
+svg {
+  width: 500px;
+}

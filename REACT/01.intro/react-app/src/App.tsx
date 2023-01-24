@@ -1,14 +1,24 @@
 import React from "react";
+import { useState } from "react";
 import logo from "./logo.svg";
+import { Logo } from "./Logo";
 import "./App.css";
+import { Form } from "./Form";
 
 function App() {
+  const [i, setI] = useState(0);
+  const [description, setDescription] = useState("");
+
+  console.log(i);
+
   return (
     <div className="App">
       <div className="logo">
         <img src={logo} className="App-logo" alt="logo" />
       </div>
       <header>
+        <Logo />
+
         <div id="meniu">
           <ul>
             <li>
@@ -38,7 +48,6 @@ function App() {
           <h1>Header img</h1>
         </div>
       </header>
-
       <div id="column-3">
         <div id="about">
           <h2>About</h2>
@@ -62,7 +71,6 @@ function App() {
           facilis.
         </div>
       </div>
-
       <div id="column-2">
         <div id="content">
           <h2>Content</h2>
@@ -111,6 +119,23 @@ function App() {
           </div>
         </div>
       </div>
+      <input
+        value={description}
+        onChange={(event) => setDescription(event.target.value)}
+      />
+      <button
+        onClick={() => {
+          setI(i + 1); // naudoti tik pradiniams projektams
+        }}
+      >
+        Submit
+      </button>
+
+      {i}
+      <p>i antruoju: {i ** 2}</p>
+      <p>{description}</p>
+
+      <Form />
     </div>
   );
 }
