@@ -5,6 +5,8 @@ import { Logo } from "./Logo";
 import "./App.css";
 import { Form } from "./Form";
 import { NoteForm } from "./components/NoteForm";
+import { Button } from "./components/Button";
+import { Hero } from "./components/Hero";
 
 function App() {
   const [i, setI] = useState(0);
@@ -142,6 +144,10 @@ function App() {
       <NoteForm>
         <h1>Notes app</h1>
       </NoteForm>
+
+      <Button text="Press me!" />
+
+      <Hero title="Info hero" subtitle="Info subtitle" color="blue" />
     </div>
   );
 }
