@@ -4,6 +4,7 @@ import logo from "./logo.svg";
 import { Logo } from "./Logo";
 import "./App.css";
 import { Form } from "./Form";
+import { NoteForm } from "./components/NoteForm";
 
 function App() {
   const [i, setI] = useState(0);
@@ -119,6 +120,7 @@ function App() {
           </div>
         </div>
       </div>
+
       <input
         value={description}
         onChange={(event) => setDescription(event.target.value)}
@@ -136,6 +138,10 @@ function App() {
       <p>{description}</p>
 
       <Form />
+
+      <NoteForm>
+        <h1>Notes app</h1>
+      </NoteForm>
     </div>
   );
 }
