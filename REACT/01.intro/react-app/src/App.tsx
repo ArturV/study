@@ -7,6 +7,7 @@ import { Form } from "./Form";
 import { NoteForm } from "./components/NoteForm";
 import { Button } from "./components/Button";
 import { Hero } from "./components/Hero";
+import { RandomNumberGenerator } from "./components/RandomNumberGenerator";
 
 function App() {
   const [i, setI] = useState(0);
@@ -148,6 +149,8 @@ function App() {
       <Button text="Press me!" />
 
       <Hero title="Info hero" subtitle="Info subtitle" color="blue" />
+
+      <RandomNumberGenerator />
     </div>
   );
 }

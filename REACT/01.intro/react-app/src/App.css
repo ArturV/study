@@ -142,3 +142,12 @@ ul li a {
 svg {
   width: 500px;
 }
+
+.importantValue {
+  color: red;
+}
+
+.boldValue {
+  font-weight: 700;
+  color: rgb(1, 51, 34);
+}
