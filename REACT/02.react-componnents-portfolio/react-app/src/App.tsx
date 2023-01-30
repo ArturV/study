@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./App.css";
+import { FetchData } from "./components/FetchData";
 import { Hero } from "./components/Hero";
 import { Portfolio } from "./components/Portfolio";
 
@@ -18,6 +19,7 @@ function App() {
       <main>
         <section>
           <Portfolio />
+          <FetchData />
         </section>
       </main>
     </div>

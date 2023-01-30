@@ -58,19 +58,6 @@ export const Portfolio = () => {
             </>
           );
         })}
-        {/*
-        <div className="div1">
-          <img
-            src="https://www.shutterstock.com/image-photo/smile-girl-field-sunflower-260nw-1461657335.jpg"
-            alt="pic"
-          />
-          <p>Isun Feugiat</p>
-        </div>
-        <div className="div2"></div>
-        <div className="div3"></div>
-        <div className="div4"></div>
-        <div className="div5"></div>
-        <div className="div6"></div> */}
       </div>
     </>
   );
