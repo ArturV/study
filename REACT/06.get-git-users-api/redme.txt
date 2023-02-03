@@ -1,0 +1,8 @@
+Sukurti svetainę, kurioje sąrašas GitHub vartotojų. Vartotojus atvaizduoti
+ atskirose kortelėse: login, url ir type . Naudoti React komponentą sąrašui
+  ir komponentą kiekvienai kortelei. Paspaudus ant kortelės, kortelėje parodomas vartotojo id.
+ 
+Naudoti: useEffect, useState, axios.
+darbas
+ 
+API: https://api.github.com/users
