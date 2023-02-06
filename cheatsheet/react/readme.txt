@@ -13,7 +13,10 @@ npm run build
 
 npm i react-router-dom // route'us kurti biblioteka
 
+npm i styled-components  // stylus kurti https://www.npmjs.com/package/styled-components
+npm i --save-dev @types/styled-components
 
+komentavimas: ctrl+ slash (ctrl+/)
 
 ***************************
 
