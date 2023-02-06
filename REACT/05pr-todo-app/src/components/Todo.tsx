@@ -1,35 +1,25 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
+import shortid from "shortid";
 
 export const Todo = () => {
-  const [count, setCount] = useState(0);
   const [value, setValue] = useState("");
-  const [todos, setTodos] = useState<string[]>([]);
-  let i = 1;
-  const ref = useRef(null);
+  const [todos, setTodos] = useState<any[]>([]);
 
-  const addItemCount = () => {
-    setCount(count + 1);
-  };
-
-  const removeItem = (i: any) => {
+  const removeItem = (index: any) => {
     const newTodos = [...todos];
-    newTodos.splice(i, 1);
+
+    newTodos.splice(index, 1);
     setTodos(newTodos);
   };
 
-  /*
-  const removeItem = (i: any) => {
-    const newItem = todos.filter((todo) => todo.i != i);
-  };*/
-
   return (
     <>
-      <h1>You have {count} todos</h1>
+      <h1>You have {todos.length} todos</h1>
       <h2>value {value} </h2>
       <div className="todos"></div>
 
       <input
-        // value={value}
+        value={value}
         required
         placeholder="Enter item"
         onChange={(event) => {
@@ -41,7 +31,6 @@ export const Todo = () => {
           if (value.length === 0) {
             return alert("Write todo");
           }
-          addItemCount();
           setTodos([...todos, value]);
           setValue("");
         }}
@@ -49,11 +38,11 @@ export const Todo = () => {
         Submit
       </button>
 
-      {todos.map((curTodo, i) => (
-        <div ref={ref} className={i.toString()} key={i}>
-          <p key={i}>
+      {todos.map((curTodo, index) => (
+        <div className={index.toString()} key={shortid.generate()}>
+          <p key={shortid.generate()}>
             {curTodo}{" "}
-            <button key={i} onClick={removeItem}>
+            <button key={shortid.generate()} onClick={() => removeItem(index)}>
               Delete
             </button>
           </p>
