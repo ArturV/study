@@ -1,0 +1,12 @@
+.App {
+  background-color: rgb(218, 220, 224);
+  text-align: center;
+}
+
+.todo-container {
+  margin: auto;
+  width: 50%;
+  border: 1px solid black;
+  padding-bottom: 50px;
+  padding-top: 25px;
+}
