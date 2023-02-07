@@ -10,10 +10,11 @@ export const Navigation = () => {
         <Link to="/add">Add</Link>
       </header>
 
-      <Routes></Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/add" element={<Add />} />
-      <Route path="*" element={<p>Cant find page</p>} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/add" element={<Add />} />
+        <Route path="*" element={<p>Cant find page</p>} />
+      </Routes>
     </BrowserRouter>
   );
 };

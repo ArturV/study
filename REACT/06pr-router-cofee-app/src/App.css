@@ -13,19 +13,21 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
+}
+
+.users-container {
+  padding: 12px;
+  border: 1px solid black;
+  margin-top: 30px;
+  background-color: azure;
+}
+
+.Ap-header a {
+  padding: 15px;
+  margin-left: 20px;
+  padding-bottom: 80px;
 }
 
 @keyframes App-logo-spin {
