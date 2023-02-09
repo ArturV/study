@@ -18,6 +18,9 @@ npm i --save-dev @types/styled-components
 
 komentavimas: ctrl+ slash (ctrl+/)
 
+//shortid to keys
+npm i --save-dev @types/shortid
+
 ***************************
 
 sukuria elementa, tik tada kai paduotas title:
