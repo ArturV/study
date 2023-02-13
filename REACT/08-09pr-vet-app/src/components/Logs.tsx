@@ -5,7 +5,7 @@ import shortid from "shortid";
 export const Logs = () => {
   const [logsCard, setLogsCard] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const ENDPOINT = `https://glittery-dull-snickerdoodle.glitch.me/v1/logs/267`;
+  const ENDPOINT = `https://glittery-dull-snickerdoodle.glitch.me/v1/logs/${id}`;
 
   const getData = async () => {
     try {
