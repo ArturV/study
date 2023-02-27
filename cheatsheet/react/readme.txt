@@ -23,6 +23,8 @@ npm i --save-dev @types/shortid
 
 ***************************
 
+coPilot - iskiepis 
+
 sukuria elementa, tik tada kai paduotas title:
 
 {props.title.length >= 1 && <h1>{props.title}</h1>}
