@@ -25,7 +25,7 @@ export type TProductsContext = {
 export type TProductsAction = {
   type: "addProduct" | "removeProduct" | "setProducts";
   payload: {
-    productId?: number; // ? gali buti gali nebuti
+    productId?: number; // ?: gali buti gali nebuti
     fetchedProducts?: TProduct[];
   };
 };
