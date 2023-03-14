@@ -7,6 +7,7 @@ export type TProductProps = {
 export type TProductActionButtonProps = {
   title: string;
   type: TProductsAction["type"];
+  label?: string;
   productId: number;
   color?:
     | "inherit"

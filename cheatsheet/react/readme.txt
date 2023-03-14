@@ -26,6 +26,8 @@ npm i --save-dev @types/shortid
 
 //testavimai:
 
+npm i -D @testing-library/react
+
 describe ("kuri komponenta testuojame", ()=>{
 
 }) 
