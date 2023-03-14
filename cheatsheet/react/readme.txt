@@ -23,6 +23,17 @@ npm i --save-dev @types/shortid
 
 ***************************
 
+
+//testavimai:
+
+describe ("kuri komponenta testuojame", ()=>{
+
+}) 
+
+npm test - konsoleje
+
+****************
+
 coPilot - iskiepis 
 
 sukuria elementa, tik tada kai paduotas title:
