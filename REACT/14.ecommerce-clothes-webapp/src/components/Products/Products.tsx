@@ -43,6 +43,7 @@ export const Products = () => {
       axios
         .get("https://fakestoreapi.com/products")
         .then((res) => {
+          console.log(res);
           dispatch({
             type: "setProducts",
             payload: { fetchedProducts: res.data },
@@ -52,7 +53,7 @@ export const Products = () => {
         .finally(() => setIsLoading(false));
     }
   }, [dispatch, fetchedProducts]);
-
+  console.log(fetchedProducts);
   return (
     <Box role="products-container">
       <Box textAlign="center">

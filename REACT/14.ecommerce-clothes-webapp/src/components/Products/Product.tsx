@@ -56,6 +56,7 @@ export const Product: FC<TProductProps> = ({ product }) => {
           color="success"
           title="+"
           type="addProduct"
+          label="add button"
           productId={product.id}
         />
 
@@ -64,6 +65,7 @@ export const Product: FC<TProductProps> = ({ product }) => {
             color="error"
             title="-"
             type="removeProduct"
+            label="remove button"
             productId={product.id}
           />
         ) : null}

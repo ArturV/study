@@ -24,7 +24,7 @@ export const Cart = () => {
         {cartProducts.map((product) => (
           <Grid
             key={product.id}
-            aria-label="cart-products"
+            aria-label="cart-product"
             container
             justifyContent="space-between"
             bgcolor="beige"
@@ -45,7 +45,7 @@ export const Cart = () => {
                 color="success"
                 title="+"
                 type="addProduct"
-                label="addProduct"
+                label="add button"
                 productId={product.id}
               />
 
@@ -55,7 +55,7 @@ export const Cart = () => {
                 color="error"
                 title="-"
                 type="removeProduct"
-                label="removeProduct"
+                label="remove button"
                 productId={product.id}
               />
             </Grid>
