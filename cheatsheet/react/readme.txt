@@ -64,3 +64,40 @@ https://www.freecodecamp.org/news/fetch-data-react/
 
 DELETE FROM ARRAY:
 https://dev.to/collegewap/how-to-delete-an-item-from-the-state-array-in-react-kl
+
+
+*******
+
+storybook install:
+
+npx sb init 
+npm i -D @testing-library/dom
+
+//paleisti:
+
+npm run storybook
+
+
+***************
+Agile - metodologija kur galime viska valdyti
+
+jira / azure devops
+
+backlogs - sarasas darbu ka reikia padaryti
+
+8 story point - 2sav
+1 story point - 1d
+
+confluence 
+atlassian
+
+3 amigos - svarbaus tiketo aptarimas
+
+tesonet
+hostinger
+bankera
+inulti
+nordsecurity
+
+
+action verbs

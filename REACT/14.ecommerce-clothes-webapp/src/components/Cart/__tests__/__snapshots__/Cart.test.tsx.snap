@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart matches snapshot 1`] = `
+<div
+  className="MuiBox-root css-0"
+>
+  <ul />
+  <div
+    className="MuiBox-root css-1ez87es"
+  >
+    <h4
+      className="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
+    >
+      Total price: 
+    </h4>
+    <h4
+      className="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
+    >
+      €0.00
+    </h4>
+  </div>
+</div>
+`;
