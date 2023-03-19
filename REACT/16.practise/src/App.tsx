@@ -1,5 +1,9 @@
-import React, { FormEventHandler, useState } from "react";
+import axios from "axios";
+import React, { FormEventHandler, useEffect, useState } from "react";
 import "./App.css";
+import { Product } from "./components/Product/Product";
+import { TProduct } from "./components/Product/types";
+import { products } from "./data/products";
 
 export const App = () => {
   const [nameInput, setNameInput] = useState("");
@@ -17,8 +21,42 @@ export const App = () => {
     setUserData((prevUserData) => ({ ...prevUserData, [key]: value }));
   };
 
+  const [products, setProducts] = useState<TProduct[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const fetchProducts = async () => {
+    try {
+      setError("");
+      setIsLoading(true);
+      const response = await axios.get<TProduct[]>(
+        "https://fakestoreapi.com/products?limit=5"
+      );
+      setProducts(response.data);
+      setIsLoading(false);
+    } catch (e: unknown) {
+      const error = e as Error;
+      setIsLoading(false);
+      setError(error.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
   return (
     <div className="App">
+      {isLoading && <p>Data is is Loading</p>}
+      {error && <p>{error}</p>}
+
+      {products.map((product) => (
+        <Product product={product} key={product.id} />
+      ))}
+
+      {/* <Product product={products[0]} />
+      <Product product={products[1]} /> */}
+
       <h2>pasidaryt forma ir islogint duomenis po Submit</h2>
 
       <form onSubmit={handleFormSubmit}>
