@@ -4,8 +4,10 @@ import "./App.css";
 import { FetchProducts } from "./components/Fetch/FetchProducts";
 import { Product } from "./components/Product/Product";
 import { products } from "./data/products";
+import { useProducts } from "./hooks/products";
 
 export const App = () => {
+  const { isLoading, error, products } = useProducts();
   const [nameInput, setNameInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
 
@@ -27,7 +29,12 @@ export const App = () => {
 
   return (
     <div className="App">
-      <FetchProducts />
+      {isLoading && <p>Data is is Loading</p>}
+      {error && <p>{error}</p>}
+
+      {products.map((product) => (
+        <Product product={product} key={product.id} />
+      ))}
 
       {/* <Product product={products[0]} />
       <Product product={products[1]} /> */}
