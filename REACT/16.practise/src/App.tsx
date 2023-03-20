@@ -7,7 +7,7 @@ import { products } from "./data/products";
 import { useProducts } from "./hooks/products";
 
 export const App = () => {
-  const { isLoading: boolean, error, products } = useProducts();
+  const { isLoading, error, products } = useProducts();
 
   const [nameInput, setNameInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
@@ -25,7 +25,7 @@ export const App = () => {
   };
 
   useEffect(() => {
-    FetchProducts();
+    useProducts();
   }, []);
 
   return (
