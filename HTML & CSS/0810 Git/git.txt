@@ -43,3 +43,14 @@ git push
 
 ******
 git pull - gauti pokycius
+
+******
+branches
+
+git checkout -b ABC-167/footer-with-year // sukuriame nauja branch'a
+git branch
+
+***
+
+git stash - grazinti vienu pushu anksciau
+git stash pop - grazinti kaip buvo

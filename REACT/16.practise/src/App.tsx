@@ -7,7 +7,8 @@ import { products } from "./data/products";
 import { useProducts } from "./hooks/products";
 
 export const App = () => {
-  const { isLoading, error, products } = useProducts();
+  const { isLoading: boolean, error, products } = useProducts();
+
   const [nameInput, setNameInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
 

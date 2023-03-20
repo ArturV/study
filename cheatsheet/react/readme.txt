@@ -2,6 +2,9 @@
 
 npx create-react-app react-app --template typescript .
 
+// cd .. && npx create-react-app --template typescript // pakilam vienu katalogu auksciau ir irasom react
+
+
 // to run:
 
 npm start
@@ -9,6 +12,23 @@ npm start
 // kodo galutine versija pasiekiama vartotojui:
 
 npm run build
+
+****
+testing, types, typescript - is package.json perkeliame i devdependencies
+
+"devDependencies": {
+},
+
+
+istrinam: reportWebwitals.js - istrinam ir is inde.tsx istrinam reportWebvitals
+istrinam is package.json - webVitals is dependecies
+
+kai pakeiciame package.json  !! SVARBU
+
+rasome i konsole: npm i
+
+dar geriau istrinti pries tai package-lock.json ir node_modules
+****
 
 
 npm i react-router-dom // route'us kurti biblioteka
